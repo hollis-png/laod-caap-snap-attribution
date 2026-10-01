@@ -1,6 +1,8 @@
 # laod-caap-snap-attribution
 
-Code accompanying the paper *"Attribution Gaps in Zero-Training LLM+OVOD Pipelines: A Fine-Grained Analysis of the CAAP–SNAP Discrepancy"* (arXiv, 2026).
+[![arXiv](https://img.shields.io/badge/arXiv-2609.32567-b31b1b.svg)](https://arxiv.org/abs/2609.32567)
+
+Code accompanying the paper *"Attribution Gaps in Zero-Training LLM+OVOD Pipelines: A Fine-Grained Analysis of the CAAP–SNAP Discrepancy"* ([arXiv:2609.32567](https://arxiv.org/abs/2609.32567), 2026).
 
 This repository does **not** re-implement or re-host [LAOD](https://github.com/furkanmumcu/LAOD) itself. It contains the batch-evaluation infrastructure, metric implementations, and analysis scripts we wrote on top of it — LAOD's own pipeline code (`laod.py`, `demo.py`, `draw_utils.py`) has an empty `eval/snap.py` and no batch-evaluation harness, so everything under `eval/` here is original.
 
@@ -93,7 +95,16 @@ Each script under `eval/` takes `--annotations` and `--images` (or similar) CLI 
 
 ## Citation
 
-If you use this code, please cite the paper (see the arXiv listing for the BibTeX entry) and the original [LAOD](https://arxiv.org/abs/2507.10844) work this analysis builds on.
+If you use this code, please cite the paper and the original [LAOD](https://arxiv.org/abs/2507.10844) work this analysis builds on.
+
+```bibtex
+@article{yen2026attribution,
+  title   = {Attribution Gaps in Zero-Training LLM+OVOD Pipelines: A Fine-Grained Analysis of the CAAP--SNAP Discrepancy},
+  author  = {Yen, Yu-Feng},
+  journal = {arXiv preprint arXiv:2609.32567},
+  year    = {2026}
+}
+```
 
 ## License
 

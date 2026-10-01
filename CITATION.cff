@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper."
+title: "laod-caap-snap-attribution"
+authors:
+  - family-names: Yen
+    given-names: Yu-Feng
+repository-code: "https://github.com/hollis-png/laod-caap-snap-attribution"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Attribution Gaps in Zero-Training LLM+OVOD Pipelines: A Fine-Grained Analysis of the CAAP-SNAP Discrepancy"
+  authors:
+    - family-names: Yen
+      given-names: Yu-Feng
+  journal: "arXiv preprint arXiv:2609.32567"
+  year: 2026
+  url: "https://arxiv.org/abs/2609.32567"
