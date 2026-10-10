@@ -6,6 +6,10 @@ Code accompanying the paper *"Attribution Gaps in Zero-Training LLM+OVOD Pipelin
 
 This repository does **not** re-implement or re-host [LAOD](https://github.com/furkanmumcu/LAOD) itself. It contains the batch-evaluation infrastructure, metric implementations, and analysis scripts we wrote on top of it — LAOD's own pipeline code (`laod.py`, `demo.py`, `draw_utils.py`) has an empty `eval/snap.py` and no batch-evaluation harness, so everything under `eval/` here is original.
 
+## Correction notice (2026-10)
+
+`eval/caap.py` as first released (and as used for arXiv v1) contained a bug: the corpus-level `compute_ca_ap` re-matched the pooled detections against the ground-truth boxes of **all** images, so a detection could match a box in a different image, increasingly so for larger corpora. This inflated corpus-level CAAP (0.38 on the 5,000-image split; the corrected value is **0.21**, per-IoU-interval LO/MI/HI = 0.268 / 0.231 / 0.113). Single-image calls and all detection-level analyses (`phase2_*`, vocabulary and audit scripts) were not affected. The current `eval/caap.py` matches per image and is covered by `tests/test_caap.py` (run `pytest tests`). Anything that cites a corpus CAAP from arXiv v1 or from an older log should be recomputed. The `selfreview_analysis/` directory holds the scripts of the follow-up analysis that found and quantified this and the other corrections.
+
 ## Setup
 
 1. Clone the original LAOD repository and place this repo's `eval/` directory inside it (or add it to `PYTHONPATH`):
@@ -47,7 +51,7 @@ This repository does **not** re-implement or re-host [LAOD](https://github.com/f
 |---|---|
 | `vocab_deepdive_extract.py` | Extracts the 150 most frequent out-of-vocabulary labels and their best-IoU-matched ground-truth category |
 | `vocab_deepdive_extract_full.py` | Extends extraction to all 829 unique out-of-vocabulary labels (99.3% coverage) |
-| `phase2_vocab_deepdive.py` | Computes weighted CAAP-TP rate per semantic-relation category (synonym / finer_grained / noise) |
+| `phase2_vocab_deepdive.py` | Computes weighted CAAP-TP rate per semantic-relation category (synonym / finer_grained / out_of_ontology; the v1 label "noise" was renamed because it suggested the labels were wrong rather than outside COCO's 80 classes) |
 
 ### Paper §3.4 — Manual "no overlap" inspection
 
@@ -81,6 +85,25 @@ This repository does **not** re-implement or re-host [LAOD](https://github.com/f
 ### Batch launch scripts (`.bat`)
 
 Windows batch scripts used to launch long-running full-corpus evaluations (`run_full_5000.bat`, `run_validation.bat`, `run_validation_v5.bat`, `run_qwen_eval.bat`, `run_qwen_full.bat`, `run_qwen_yolo.bat`). These assume a `conda` environment named `laod` and reference paths relative to wherever you clone this repo alongside LAOD — adjust paths at the top of each script for your own setup.
+
+### Follow-up analysis (`selfreview_analysis/`)
+
+Scripts written after a self-review of the paper (all read stored predictions or labels; none changes `eval/`). Several run on a separate GPU machine and take absolute paths at the top; they are included for transparency and need adapting to run elsewhere.
+
+| File | Purpose |
+|---|---|
+| `attribution_recompute.py`, `rq1_size_recheck.py`, `caap_check.py` | Re-derivation of the RQ1 size analysis (selection artifact), the exact-match failure decomposition, and the CAAP matching-bug check |
+| `e1_lvis_rescore.py`, `e2_corem_rescore.py` | Re-score the detections against LVIS v1 and COCO-ReM annotations |
+| `e3_*.py`, `e4_gdino_caap.py` | Regenerate Qwen2.5-VL labels and detections; corrected CAAP for Grounding DINO |
+| `e6_soft_ap.py` | Exploratory AP with soft validity labels (optimistic, see the script header) |
+| `e7_caap_other_gt.py` | Corpus CAAP against COCO-ReM, LVIS and their union |
+| `e8_stuff_exclusion.py` | Share of valid-but-unannotated detections with stuff labels set aside |
+| `e9_duplicates_by_vocab.py` | Duplicate detections by vocabulary category |
+| `e10_hi_interval.py` | Which AP implementation choices move the HI-interval CAAP |
+| `e11_pilot_subset.py` | Recompute the 200-image pilot with the full run's predictions |
+| `e13_prompt_variants.py` | Prompt-variant robustness run |
+| `compute_agreement_hh.py` | Cohen's kappa between two human annotators |
+| `judge/` | LLM-judge runs for the vocabulary contrast, including the text-only variant (`run_textonly.py`); needs an OpenRouter key in the environment of the `llm` CLI, never in the repo |
 
 ## Reproducing the paper's numbers
 
