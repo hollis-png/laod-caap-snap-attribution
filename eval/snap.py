@@ -88,10 +88,14 @@ def compute_ap_single_image_semantic(predictions_per_image, ground_truths_per_im
 	if num_pred == 0 and num_gt > 0:
 		return [], [], num_gt
 
-	predictions_per_image = sorted(predictions_per_image, key=lambda x: x[1], reverse=True)
+	order = sorted(range(num_pred), key=lambda k: predictions_per_image[k][1], reverse=True)
+	predictions_per_image = [predictions_per_image[k] for k in order]
 
 	if pred_embeddings is None:
 		pred_embeddings = embed_labels([p[0] for p in predictions_per_image])
+	else:
+		# embeddings were computed in the caller's order; keep them aligned with the confidence-sorted predictions
+		pred_embeddings = np.asarray(pred_embeddings)[order]
 	if gt_embeddings is None:
 		gt_embeddings = embed_labels([g[0] for g in ground_truths_per_image])
 
