@@ -1,0 +1,6 @@
+Checkpoint=openai/clip-vit-base-patch32 n_images=200 first_id=139 last_id=20247
+SNAP(openai/clip-vit-base-patch32, n=200) = 0.4424
+Checkpoint=openai/clip-vit-base-patch16 n_images=200 first_id=139 last_id=20247
+SNAP(openai/clip-vit-base-patch16, n=200) = 0.4299
+Checkpoint=openai/clip-vit-large-patch14 n_images=200 first_id=139 last_id=20247
+SNAP(openai/clip-vit-large-patch14, n=200) = 0.3693

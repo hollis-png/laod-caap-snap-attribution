@@ -1,0 +1,7 @@
+{
+  "checkpoint": "openai/clip-vit-base-patch16",
+  "n_images": 200,
+  "first_image_id": 139,
+  "last_image_id": 20247,
+  "snap": 0.4298963871951681
+}

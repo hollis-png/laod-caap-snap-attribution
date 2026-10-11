@@ -1,0 +1,18 @@
+{
+ "n_images": 5000,
+ "images_with_identical_label_set": 2638,
+ "corpus_caap": [
+  0.20946699740257424,
+  0.20811582621375213
+ ],
+ "corpus_snap": [
+  0.46159632359098185,
+  0.459786969749826
+ ],
+ "original_run": {
+  "corpus_caap": 0.2068,
+  "corpus_snap": 0.4559
+ },
+ "spread_caap": 0.0026669974025742282,
+ "spread_snap": 0.005696323590981822
+}

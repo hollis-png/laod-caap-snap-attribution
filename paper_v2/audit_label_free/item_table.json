@@ -1,0 +1,1002 @@
+{
+"B001": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "giraffe"
+},
+"B002": {
+"kind": "test_other_class",
+"old_case_id": "R252",
+"model_label": "shelf"
+},
+"B003": {
+"kind": "test_no_overlap",
+"old_case_id": "R141",
+"model_label": "street sign"
+},
+"B004": {
+"kind": "test_other_class",
+"old_case_id": "R187",
+"model_label": "helmet"
+},
+"B005": {
+"kind": "test_no_overlap",
+"old_case_id": "R269",
+"model_label": "lamp post"
+},
+"B006": {
+"kind": "test_other_class",
+"old_case_id": "R190",
+"model_label": "plate"
+},
+"B007": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "bottles"
+},
+"B008": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "cup"
+},
+"B009": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "pigeon"
+},
+"B010": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "bowl"
+},
+"B011": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "bus"
+},
+"B012": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "remote"
+},
+"B013": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "swan"
+},
+"B014": {
+"kind": "test_no_overlap",
+"old_case_id": "R014",
+"model_label": "pans"
+},
+"B015": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "cup"
+},
+"B016": {
+"kind": "test_no_overlap",
+"old_case_id": "R001",
+"model_label": "traffic light"
+},
+"B017": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "surfboard"
+},
+"B018": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "cows"
+},
+"B019": {
+"kind": "test_other_class",
+"old_case_id": "R007",
+"model_label": "telephone"
+},
+"B020": {
+"kind": "test_other_class",
+"old_case_id": "R203",
+"model_label": "chair"
+},
+"B021": {
+"kind": "test_no_overlap",
+"old_case_id": "R010",
+"model_label": "bottles"
+},
+"B022": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "chair"
+},
+"B023": {
+"kind": "test_no_overlap",
+"old_case_id": "R251",
+"model_label": "bread"
+},
+"B024": {
+"kind": "test_other_class",
+"old_case_id": "R167",
+"model_label": "hat"
+},
+"B025": {
+"kind": "test_no_overlap",
+"old_case_id": "R054",
+"model_label": "blinds"
+},
+"B026": {
+"kind": "test_other_class",
+"old_case_id": "R235",
+"model_label": "bottle"
+},
+"B027": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "bicycle"
+},
+"B028": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "clock"
+},
+"B029": {
+"kind": "test_no_overlap",
+"old_case_id": "R231",
+"model_label": "flag"
+},
+"B030": {
+"kind": "test_no_overlap",
+"old_case_id": "R198",
+"model_label": "table"
+},
+"B031": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "car"
+},
+"B032": {
+"kind": "test_other_class",
+"old_case_id": "R291",
+"model_label": "sky"
+},
+"B033": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "chair"
+},
+"B034": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "tennis racket"
+},
+"B035": {
+"kind": "test_no_overlap",
+"old_case_id": "R215",
+"model_label": "door"
+},
+"B036": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "train"
+},
+"B037": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "orange"
+},
+"B038": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "chair"
+},
+"B039": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "bus"
+},
+"B040": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "bird"
+},
+"B041": {
+"kind": "test_no_overlap",
+"old_case_id": "R264",
+"model_label": "lamp"
+},
+"B042": {
+"kind": "test_other_class",
+"old_case_id": "R116",
+"model_label": "boots"
+},
+"B043": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "television"
+},
+"B044": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "man"
+},
+"B045": {
+"kind": "test_no_overlap",
+"old_case_id": "R056",
+"model_label": "paper towel"
+},
+"B046": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "person"
+},
+"B047": {
+"kind": "test_no_overlap",
+"old_case_id": "R060",
+"model_label": "gloves"
+},
+"B048": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "bottle"
+},
+"B049": {
+"kind": "test_other_class",
+"old_case_id": "R110",
+"model_label": "field"
+},
+"B050": {
+"kind": "test_no_overlap",
+"old_case_id": "R050",
+"model_label": "cabinet"
+},
+"B051": {
+"kind": "test_no_overlap",
+"old_case_id": "R037",
+"model_label": "mirror"
+},
+"B052": {
+"kind": "test_no_overlap",
+"old_case_id": "R162",
+"model_label": "gloves"
+},
+"B053": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "geese"
+},
+"B054": {
+"kind": "test_no_overlap",
+"old_case_id": "R154",
+"model_label": "lamps"
+},
+"B055": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "bucket"
+},
+"B056": {
+"kind": "test_other_class",
+"old_case_id": "R172",
+"model_label": "plate"
+},
+"B057": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "broccoli"
+},
+"B058": {
+"kind": "test_no_overlap",
+"old_case_id": "R158",
+"model_label": "pot"
+},
+"B059": {
+"kind": "test_other_class",
+"old_case_id": "R229",
+"model_label": "helmet"
+},
+"B060": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "vase"
+},
+"B061": {
+"kind": "test_other_class",
+"old_case_id": "R091",
+"model_label": "beans"
+},
+"B062": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "man"
+},
+"B063": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "bottles"
+},
+"B064": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "refrigerator"
+},
+"B065": {
+"kind": "test_no_overlap",
+"old_case_id": "R107",
+"model_label": "shoes"
+},
+"B066": {
+"kind": "test_other_class",
+"old_case_id": "R090",
+"model_label": "sky"
+},
+"B067": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "kite"
+},
+"B068": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "man"
+},
+"B069": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "horses"
+},
+"B070": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "plate"
+},
+"B071": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "carrot"
+},
+"B072": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "person"
+},
+"B073": {
+"kind": "test_no_overlap",
+"old_case_id": "R296",
+"model_label": "tomatoes"
+},
+"B074": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "dog"
+},
+"B075": {
+"kind": "test_no_overlap",
+"old_case_id": "R145",
+"model_label": "street sign"
+},
+"B076": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "person"
+},
+"B077": {
+"kind": "test_other_class",
+"old_case_id": "R242",
+"model_label": "gloves"
+},
+"B078": {
+"kind": "test_other_class",
+"old_case_id": "R042",
+"model_label": "pants"
+},
+"B079": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "giraffe"
+},
+"B080": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "car"
+},
+"B081": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "sailboat"
+},
+"B082": {
+"kind": "test_no_overlap",
+"old_case_id": "R025",
+"model_label": "fish"
+},
+"B083": {
+"kind": "test_no_overlap",
+"old_case_id": "R023",
+"model_label": "lamp"
+},
+"B084": {
+"kind": "test_no_overlap",
+"old_case_id": "R151",
+"model_label": "trash can"
+},
+"B085": {
+"kind": "test_no_overlap",
+"old_case_id": "R065",
+"model_label": "cabinet"
+},
+"B086": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "tennis racket"
+},
+"B087": {
+"kind": "test_no_overlap",
+"old_case_id": "R119",
+"model_label": "lips"
+},
+"B088": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "bird"
+},
+"B089": {
+"kind": "test_no_overlap",
+"old_case_id": "R099",
+"model_label": "cabinet"
+},
+"B090": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "bananas"
+},
+"B091": {
+"kind": "test_other_class",
+"old_case_id": "R138",
+"model_label": "pants"
+},
+"B092": {
+"kind": "test_no_overlap",
+"old_case_id": "R191",
+"model_label": "sheep"
+},
+"B093": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "surfboard"
+},
+"B094": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "tennis racket"
+},
+"B095": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "person"
+},
+"B096": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "bottle"
+},
+"B097": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "microwave"
+},
+"B098": {
+"kind": "test_other_class",
+"old_case_id": "R170",
+"model_label": "lamp"
+},
+"B099": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "stove"
+},
+"B100": {
+"kind": "test_no_overlap",
+"old_case_id": "R207",
+"model_label": "hat"
+},
+"B101": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "man"
+},
+"B102": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "elephant"
+},
+"B103": {
+"kind": "test_no_overlap",
+"old_case_id": "R130",
+"model_label": "motorbike"
+},
+"B104": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "cup"
+},
+"B105": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "chairs"
+},
+"B106": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "sheep"
+},
+"B107": {
+"kind": "test_no_overlap",
+"old_case_id": "R047",
+"model_label": "streetlights"
+},
+"B108": {
+"kind": "test_no_overlap",
+"old_case_id": "R206",
+"model_label": "donut"
+},
+"B109": {
+"kind": "test_other_class",
+"old_case_id": "R202",
+"model_label": "hair"
+},
+"B110": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "traffic light"
+},
+"B111": {
+"kind": "test_no_overlap",
+"old_case_id": "R008",
+"model_label": "dresser"
+},
+"B112": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "car"
+},
+"B113": {
+"kind": "test_no_overlap",
+"old_case_id": "R080",
+"model_label": "street sign"
+},
+"B114": {
+"kind": "test_no_overlap",
+"old_case_id": "R087",
+"model_label": "stop sign"
+},
+"B115": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "phone"
+},
+"B116": {
+"kind": "test_no_overlap",
+"old_case_id": "R104",
+"model_label": "basket"
+},
+"B117": {
+"kind": "test_no_overlap",
+"old_case_id": "R046",
+"model_label": "bottles"
+},
+"B118": {
+"kind": "test_other_class",
+"old_case_id": "R103",
+"model_label": "tennis racket"
+},
+"B119": {
+"kind": "test_no_overlap",
+"old_case_id": "R238",
+"model_label": "person"
+},
+"B120": {
+"kind": "test_other_class",
+"old_case_id": "R101",
+"model_label": "calendar"
+},
+"B121": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "cat"
+},
+"B122": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "elephant"
+},
+"B123": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "toilet"
+},
+"B124": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "car"
+},
+"B125": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "chair"
+},
+"B126": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "bus"
+},
+"B127": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "woman"
+},
+"B128": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "man"
+},
+"B129": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "ski"
+},
+"B130": {
+"kind": "test_no_overlap",
+"old_case_id": "R068",
+"model_label": "umbrella"
+},
+"B131": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "motorcycle"
+},
+"B132": {
+"kind": "test_no_overlap",
+"old_case_id": "R021",
+"model_label": "glove"
+},
+"B133": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "remote"
+},
+"B134": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "cake"
+},
+"B135": {
+"kind": "test_other_class",
+"old_case_id": "R095",
+"model_label": "burger"
+},
+"B136": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "sofa"
+},
+"B137": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "broccoli"
+},
+"B138": {
+"kind": "test_other_class",
+"old_case_id": "R152",
+"model_label": "shelf"
+},
+"B139": {
+"kind": "test_no_overlap",
+"old_case_id": "R075",
+"model_label": "flag"
+},
+"B140": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "person"
+},
+"B141": {
+"kind": "test_no_overlap",
+"old_case_id": "R129",
+"model_label": "cabinet"
+},
+"B142": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "bread"
+},
+"B143": {
+"kind": "test_no_overlap",
+"old_case_id": "R182",
+"model_label": "kites"
+},
+"B144": {
+"kind": "test_other_class",
+"old_case_id": "R140",
+"model_label": "wristband"
+},
+"B145": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "bottles"
+},
+"B146": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "person"
+},
+"B147": {
+"kind": "test_no_overlap",
+"old_case_id": "R280",
+"model_label": "bottles"
+},
+"B148": {
+"kind": "test_other_class",
+"old_case_id": "R096",
+"model_label": "shirt"
+},
+"B149": {
+"kind": "test_other_class",
+"old_case_id": "R055",
+"model_label": "bench"
+},
+"B150": {
+"kind": "test_no_overlap",
+"old_case_id": "R295",
+"model_label": "towel"
+},
+"B151": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "baseball"
+},
+"B152": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "person"
+},
+"B153": {
+"kind": "test_no_overlap",
+"old_case_id": "R136",
+"model_label": "bottle"
+},
+"B154": {
+"kind": "test_other_class",
+"old_case_id": "R086",
+"model_label": "lamp"
+},
+"B155": {
+"kind": "test_no_overlap",
+"old_case_id": "R006",
+"model_label": "towel"
+},
+"B156": {
+"kind": "test_other_class",
+"old_case_id": "R247",
+"model_label": "wall"
+},
+"B157": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "car"
+},
+"B158": {
+"kind": "test_no_overlap",
+"old_case_id": "R224",
+"model_label": "road sign"
+},
+"B159": {
+"kind": "test_no_overlap",
+"old_case_id": "R153",
+"model_label": "clock"
+},
+"B160": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "glove"
+},
+"B161": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "taxi"
+},
+"B162": {
+"kind": "test_no_overlap",
+"old_case_id": "R155",
+"model_label": "pictures"
+},
+"B163": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "woman"
+},
+"B164": {
+"kind": "test_other_class",
+"old_case_id": "R174",
+"model_label": "chest of drawers"
+},
+"B165": {
+"kind": "test_no_overlap",
+"old_case_id": "R286",
+"model_label": "pumpkin"
+},
+"B166": {
+"kind": "test_no_overlap",
+"old_case_id": "R016",
+"model_label": "sink"
+},
+"B167": {
+"kind": "test_no_overlap",
+"old_case_id": "R223",
+"model_label": "train"
+},
+"B168": {
+"kind": "test_other_class",
+"old_case_id": "R135",
+"model_label": "hat"
+},
+"B169": {
+"kind": "test_no_overlap",
+"old_case_id": "R127",
+"model_label": "wall"
+},
+"B170": {
+"kind": "test_other_class",
+"old_case_id": "R217",
+"model_label": "pillows"
+},
+"B171": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "giraffe"
+},
+"B172": {
+"kind": "test_no_overlap",
+"old_case_id": "R222",
+"model_label": "printer"
+},
+"B173": {
+"kind": "neg_shrink",
+"old_case_id": null,
+"model_label": "elephant"
+},
+"B174": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "bear"
+},
+"B175": {
+"kind": "test_no_overlap",
+"old_case_id": "R218",
+"model_label": "shoes"
+},
+"B176": {
+"kind": "test_no_overlap",
+"old_case_id": "R111",
+"model_label": "tree"
+},
+"B177": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "cat"
+},
+"B178": {
+"kind": "test_other_class",
+"old_case_id": "R048",
+"model_label": "car"
+},
+"B179": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "giraffe"
+},
+"B180": {
+"kind": "test_other_class",
+"old_case_id": "R144",
+"model_label": "plate"
+},
+"B181": {
+"kind": "test_no_overlap",
+"old_case_id": "R270",
+"model_label": "shower curtain"
+},
+"B182": {
+"kind": "test_other_class",
+"old_case_id": "R094",
+"model_label": "sky"
+},
+"B183": {
+"kind": "test_no_overlap",
+"old_case_id": "R117",
+"model_label": "sky"
+},
+"B184": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "man"
+},
+"B185": {
+"kind": "test_no_overlap",
+"old_case_id": "R125",
+"model_label": "person"
+},
+"B186": {
+"kind": "test_no_overlap",
+"old_case_id": "R233",
+"model_label": "frame"
+},
+"B187": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "tie"
+},
+"B188": {
+"kind": "test_other_class",
+"old_case_id": "R243",
+"model_label": "shorts"
+},
+"B189": {
+"kind": "test_no_overlap",
+"old_case_id": "R216",
+"model_label": "person"
+},
+"B190": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "suitcase"
+},
+"B191": {
+"kind": "test_no_overlap",
+"old_case_id": "R157",
+"model_label": "shelf"
+},
+"B192": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "frisbee"
+},
+"B193": {
+"kind": "test_no_overlap",
+"old_case_id": "R106",
+"model_label": "sky"
+},
+"B194": {
+"kind": "test_no_overlap",
+"old_case_id": "R159",
+"model_label": "building"
+},
+"B195": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "bed"
+},
+"B196": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "person"
+},
+"B197": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "person"
+},
+"B198": {
+"kind": "neg_shift",
+"old_case_id": null,
+"model_label": "chair"
+},
+"B199": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "man"
+},
+"B200": {
+"kind": "pos",
+"old_case_id": null,
+"model_label": "dog"
+}
+}

@@ -1,0 +1,44 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A2 分歧複核</title>
+<style>
+:root{--bg:#f6f4ef;--ink:#1d1d1b;--mut:#6b675e;--card:#fff;--line:#d9d4c7;--ok:#0a7d5a;--amb:#8a8a8a;--bad:#c2410c;--acc:#1f4e79}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--ink:#ecebe6;--mut:#a09c90;--card:#1f1f1c;--line:#3a3935;--ok:#34c79a;--amb:#b0b0b0;--bad:#f08a5a;--acc:#7fb4e6}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,"Noto Sans CJK TC",sans-serif}
+header{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap}header h1{font-size:16px;margin:0}.bar{flex:1;min-width:160px;height:8px;background:var(--line);border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--acc);width:0}
+main{max-width:1040px;margin:0 auto;padding:16px;display:grid;gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+.meta{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:8px;align-items:center}.meta b{font-size:20px}.meta span{color:var(--mut)}
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;color:#fff;font-weight:600}.valid{background:var(--ok)}.ambiguous{background:var(--amb)}.wrong{background:var(--bad)}
+img{max-width:100%;height:auto;border-radius:6px;display:block;margin:0 auto}
+.btns{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+button{font:inherit;padding:12px 8px;border-radius:8px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}button:hover,button:focus-visible{border-color:var(--acc);outline:none}button.sel{background:var(--acc);border-color:var(--acc);color:#fff}
+.nav{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center}.nav button{padding:8px 14px}
+textarea{width:100%;margin-top:10px;padding:8px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;min-height:44px}small{color:var(--mut)}kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;background:var(--bg)}
+@media(max-width:600px){.btns{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<header><h1>A2：AI 與你分歧的 17 例</h1><div class="bar"><i id="prog"></i></div><span id="count"></span><button id="exp">匯出 CSV</button></header>
+<main>
+<section class="card"><small>這一頁<b>不是盲審</b>：同時顯示 AI 與你當時的判定，用來決定你是否要改判。紅 = 模型偵測框，綠 = COCO 標註（白字為類別）。規則同主表單：<b>有效</b> = 紅框框住標籤所指物體且它沒有自己的綠框；<b>模糊</b> = 無法判斷；<b>錯誤</b> = 框與標籤對不上或該物體已有綠框。快捷鍵：<kbd>0</kbd>／<kbd>空白</kbd> 維持你原本的判定，<kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> 改判為 有效／模糊／錯誤，<kbd>←</kbd><kbd>→</kbd> 切換。</small></section>
+<section class="card"><div class="meta"><span id="rid"></span><span>標籤：<b id="lab"></b></span><span id="near"></span><span id="conf"></span></div>
+<div class="meta"><span>AI：<span class="tag" id="ai"></span></span><span>你當時：<span class="tag" id="au"></span></span><span id="fin"></span></div>
+<img id="im" alt="案例圖片">
+<div class="btns"><button id="b0">0 維持你原本的</button><button id="b1">1 改為 有效</button><button id="b2">2 改為 模糊</button><button id="b3">3 改為 錯誤</button></div>
+<textarea id="note" placeholder="備註（選填）：為什麼改判／維持"></textarea>
+<div class="nav"><button id="prev">← 上一例</button><button id="next">下一例 →</button><span id="pos"></span></div></section>
+</main>
+<script>
+const C=[{"id": "R007", "label": "telephone", "nearest": "chair", "conf": 0.37, "ai": "valid", "author": "wrong"}, {"id": "R039", "label": "hat", "nearest": "person", "conf": 0.54, "ai": "wrong", "author": "valid"}, {"id": "R048", "label": "car", "nearest": "truck", "conf": 0.59, "ai": "ambiguous", "author": "valid"}, {"id": "R055", "label": "bench", "nearest": "person", "conf": 0.26, "ai": "ambiguous", "author": "wrong"}, {"id": "R064", "label": "shelf", "nearest": "sink", "conf": 0.59, "ai": "ambiguous", "author": "wrong"}, {"id": "R070", "label": "sky", "nearest": "bird", "conf": 0.35, "ai": "wrong", "author": "valid"}, {"id": "R090", "label": "sky", "nearest": "person", "conf": 0.47, "ai": "ambiguous", "author": "valid"}, {"id": "R103", "label": "tennis racket", "nearest": "person", "conf": 0.36, "ai": "ambiguous", "author": "wrong"}, {"id": "R109", "label": "orange", "nearest": "carrot", "conf": 0.34, "ai": "ambiguous", "author": "wrong"}, {"id": "R139", "label": "truck", "nearest": "person", "conf": 0.26, "ai": "wrong", "author": "valid"}, {"id": "R166", "label": "teapot", "nearest": "potted plant", "conf": 0.7, "ai": "ambiguous", "author": "valid"}, {"id": "R170", "label": "lamp", "nearest": "couch", "conf": 0.29, "ai": "ambiguous", "author": "valid"}, {"id": "R190", "label": "plate", "nearest": "cake", "conf": 0.63, "ai": "ambiguous", "author": "valid"}, {"id": "R202", "label": "hair", "nearest": "person", "conf": 0.55, "ai": "valid", "author": "wrong"}, {"id": "R204", "label": "plate", "nearest": "dining table", "conf": 0.71, "ai": "ambiguous", "author": "valid"}, {"id": "R229", "label": "helmet", "nearest": "person", "conf": 0.31, "ai": "ambiguous", "author": "valid"}, {"id": "R232", "label": "store", "nearest": "person", "conf": 0.29, "ai": "wrong", "author": "valid"}];const NM={valid:"有效",ambiguous:"模糊",wrong:"錯誤"};const KEY="laod_a2_v1";let st={};try{st=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+let i=0;const $=id=>document.getElementById(id);const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+const FIN=["valid","ambiguous","wrong"];
+function final(c){const s=st[c.id]||{};return s.v===undefined?null:(s.v===0?c.author:FIN[s.v-1])}
+function show(){const c=C[i],s=st[c.id]||{};$("rid").textContent=c.id;$("lab").textContent=c.label;$("near").textContent="最近 GT 類別："+c.nearest;$("conf").textContent="信心 "+c.conf;
+$("ai").textContent=NM[c.ai];$("ai").className="tag "+c.ai;$("au").textContent=NM[c.author];$("au").className="tag "+c.author;
+const f=final(c);$("fin").innerHTML=f?("最終：<span class='tag "+f+"'>"+NM[f]+"</span>"+(f!==c.author?" （改判）":"")):"尚未複核";
+$("im").src="../human_review/img/"+c.id+".jpg";$("note").value=s.note||"";[0,1,2,3].forEach(k=>$("b"+k).classList.toggle("sel",s.v===k));
+const n=C.filter(x=>final(x)).length;$("count").textContent=n+" / "+C.length;$("prog").style.width=(100*n/C.length)+"%";$("pos").textContent=(i+1)+" / "+C.length}
+function set(v){const c=C[i];st[c.id]=Object.assign(st[c.id]||{},{v});save();if(i<C.length-1)i++;show()}
+function go(d){i=Math.min(C.length-1,Math.max(0,i+d));show()}
+[0,1,2,3].forEach(k=>$("b"+k).onclick=()=>set(k));$("prev").onclick=()=>go(-1);$("next").onclick=()=>go(1);
+$("note").oninput=e=>{const c=C[i];st[c.id]=Object.assign(st[c.id]||{},{note:e.target.value});save()};
+document.addEventListener("keydown",e=>{if(e.target.tagName==="TEXTAREA")return;if("0123".includes(e.key)&&e.key!=="")set(+e.key);else if(e.key===" "){e.preventDefault();set(0)}else if(e.key==="ArrowLeft")go(-1);else if(e.key==="ArrowRight")go(1)});
+$("exp").onclick=()=>{const rows=["id,label,ai,author_original,final,changed,note"].concat(C.map(c=>{const f=final(c)||"";return [c.id,JSON.stringify(c.label),c.ai,c.author,f,f&&f!==c.author?"yes":"no",JSON.stringify((st[c.id]||{}).note||"")].join(",")}));
+const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([rows.join("\n")],{type:"text/csv"}));a.download="a2_review.csv";a.click()};show();
+</script></body></html>

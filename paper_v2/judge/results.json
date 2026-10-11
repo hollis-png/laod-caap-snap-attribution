@@ -1,0 +1,111 @@
+{
+ "pairs": {
+  "deepseek_v1|all 50": {
+   "n": 50,
+   "acc": 0.84,
+   "kappa": 0.6396396396396395,
+   "lo": 0.4444444444444443,
+   "hi": 0.8308906426155579
+  },
+  "deepseek_v1|non-example 37": {
+   "n": 37,
+   "acc": 0.8378378378378378,
+   "kappa": 0.5066666666666666,
+   "lo": 0.17777777777777787,
+   "hi": 0.7869481765834935
+  },
+  "deepseek_v2|all 50": {
+   "n": 50,
+   "acc": 0.86,
+   "kappa": 0.6663489037178264,
+   "lo": 0.44987775061124685,
+   "hi": 0.8642533936651582
+  },
+  "deepseek_v2|non-example 37": {
+   "n": 37,
+   "acc": 0.8918918918918919,
+   "kappa": 0.6484560570071258,
+   "lo": 0.2792207792207793,
+   "hi": 0.9114832535885169
+  },
+  "mistral_v1|all 50": {
+   "n": 50,
+   "acc": 0.92,
+   "kappa": 0.8031496062992127,
+   "lo": 0.5838287752675385,
+   "hi": 0.9547920433996383
+  },
+  "mistral_v1|non-example 37": {
+   "n": 37,
+   "acc": 0.9459459459459459,
+   "kappa": 0.8102564102564103,
+   "lo": 0.43939393939393917,
+   "hi": 1.0
+  },
+  "deepseek_v1~deepseek_v2": {
+   "n": 775,
+   "kappa": 0.7833783657877574
+  },
+  "deepseek_v1~mistral_v1": {
+   "n": 775,
+   "kappa": 0.6595300484414001
+  },
+  "deepseek_v2~mistral_v1": {
+   "n": 775,
+   "kappa": 0.743523685048342
+  }
+ },
+ "table": {
+  "deepseek_v1|synonym": {
+   "labels": 139,
+   "n": 2788,
+   "rate": 0.849713055954089
+  },
+  "deepseek_v1|finer_grained": {
+   "labels": 85,
+   "n": 1157,
+   "rate": 0.7605877268798618
+  },
+  "deepseek_v1|out_of_ontology": {
+   "labels": 551,
+   "n": 7533,
+   "rate": 0.12531527943714324
+  },
+  "deepseek_v2|synonym": {
+   "labels": 96,
+   "n": 1776,
+   "rate": 0.7989864864864865
+  },
+  "deepseek_v2|finer_grained": {
+   "labels": 93,
+   "n": 1846,
+   "rate": 0.9252437703141928
+  },
+  "deepseek_v2|out_of_ontology": {
+   "labels": 584,
+   "n": 7854,
+   "rate": 0.13572701807995927
+  },
+  "deepseek_v2|unsure": {
+   "labels": 2,
+   "n": 2,
+   "rate": 0.0
+  },
+  "mistral_v1|synonym": {
+   "labels": 48,
+   "n": 1018,
+   "rate": 0.8860510805500982
+  },
+  "mistral_v1|finer_grained": {
+   "labels": 137,
+   "n": 2567,
+   "rate": 0.8605375925204519
+  },
+  "mistral_v1|out_of_ontology": {
+   "labels": 590,
+   "n": 7893,
+   "rate": 0.13708349170150766
+  }
+ },
+ "adopt": false
+}

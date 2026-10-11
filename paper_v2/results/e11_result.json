@@ -1,0 +1,11 @@
+{
+ "n_images": 200,
+ "n_detections": 1112,
+ "CAAP_mean": 0.203,
+ "CAAP_LO": 0.262,
+ "SNAP_B32_mean": 0.4382,
+ "pilot_reported": {
+  "CAAP_mean": 0.2521,
+  "SNAP_B32_mean": 0.4382
+ }
+}

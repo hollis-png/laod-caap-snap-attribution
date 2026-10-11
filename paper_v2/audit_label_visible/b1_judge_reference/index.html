@@ -1,0 +1,43 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>B1 詞彙關係盲標</title>
+<style>
+:root{--bg:#f6f4ef;--ink:#1d1d1b;--mut:#6b675e;--card:#fff;--line:#d9d4c7;--acc:#1f4e79}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--ink:#ecebe6;--mut:#a09c90;--card:#1f1f1c;--line:#3a3935;--acc:#7fb4e6}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,"Noto Sans CJK TC",sans-serif}
+header{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap}header h1{font-size:16px;margin:0}.bar{flex:1;min-width:160px;height:8px;background:var(--line);border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--acc);width:0}
+main{max-width:900px;margin:0 auto;padding:16px;display:grid;gap:14px}.card,details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px}summary{cursor:pointer;font-weight:600}
+.pair{display:flex;align-items:center;gap:16px;justify-content:center;margin:14px 0;flex-wrap:wrap}.pair div{padding:14px 26px;border:2px solid var(--line);border-radius:10px;text-align:center}.pair small{display:block;color:var(--mut)}.pair b{font-size:26px}.pair span{font-size:22px;color:var(--mut)}
+.btns{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px}button{font:inherit;padding:12px 8px;border-radius:8px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;text-align:left}
+button:hover,button:focus-visible{border-color:var(--acc);outline:none}button.sel{background:var(--acc);border-color:var(--acc);color:#fff}button small{display:block;opacity:.8}
+.nav{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;align-items:center}.nav button{padding:8px 14px;text-align:center}
+textarea{width:100%;margin-top:10px;padding:8px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;min-height:44px}small{color:var(--mut)}kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;background:var(--bg)}
+@media(max-width:700px){.btns{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<header><h1>B1：LLM judge 詞彙關係 · 盲標 50 個標籤</h1><div class="bar"><i id="prog"></i></div><span id="count"></span><button id="exp" style="padding:6px 12px;text-align:center">匯出 CSV</button></header>
+<main>
+<details open><summary>怎麼判（先讀）</summary>
+<p>LLM 為圖片取了一個標籤（左），而這個標籤最常和 COCO 的某一類（右）的標註框重疊。請判斷<b>左邊這個詞，相對於右邊這個 COCO 類別，是哪一種關係</b>：</p>
+<p><b>1 同義詞（synonym）</b>：指的是<b>同一種東西</b>，換個說法而已，大致可互換。例：<i>sofa → couch</i>、<i>phone → cell phone</i>、<i>television → tv</i>、<i>horses → horse</i>、<i>vehicle → car</i>。</p>
+<p><b>2 較細粒度（finer-grained）</b>：仍是<b>同一個物體或同一群</b>，但描述更具體或換了範圍。例：<i>woman、boy、surfer → person</i>、<i>table → dining table</i>、<i>flowers → vase</i>。</p>
+<p><b>3 非本體（out-of-ontology）</b>：指的是<b>另一個物體</b>、部件或配件，不是右邊那一類本身。例：<i>helmet、hat、shoes → person</i>（人身上的配件）、<i>plate → dining table</i>、<i>cabinet → oven</i>、<i>shelf → book</i>。</p>
+<p><b>4 無法判斷</b>：詞意不明或你不確定。</p>
+<p><small>不顯示任何統計資料或 LLM 的原判斷。快捷鍵：<kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd> 選擇並跳下一個，<kbd>←</kbd><kbd>→</kbd> 切換。進度自動存在瀏覽器。</small></p>
+<p><small>性別、年齡、職業描述詞（例：<i>man、woman、boy、surfer</i> 相對於 person）請<b>依你自己的判斷</b>歸類，我們想知道你怎麼分。</small></p>
+<p><small>邊界案例（例：<i>suit、jacket</i> 相對於 person）：「衣物不是人」，我們的分類把它們歸 3，但它們的框常和人重疊。你照字面語意判斷即可，不必考慮定位表現。</small></p></details>
+<section class="card"><div class="pair"><div><small>LLM 標籤</small><b id="lab"></b></div><span>↔</span><div><small>最常重疊的 COCO 類別</small><b id="mat"></b></div></div>
+<div class="btns"><button id="b1">1 同義詞<small>同一種東西</small></button><button id="b2">2 較細粒度<small>同一物體／群，更具體</small></button><button id="b3">3 非本體<small>另一個物體／部件／配件</small></button><button id="b4">4 無法判斷<small></small></button></div>
+<textarea id="note" placeholder="備註（選填）"></textarea>
+<div class="nav"><button id="prev">← 上一個</button><button id="next">下一個 →</button><span id="pos"></span></div></section>
+</main>
+<script>
+const C=[{"id": "L01", "label": "grass", "matched": "person"}, {"id": "L02", "label": "outlet", "matched": "oven"}, {"id": "L03", "label": "sign", "matched": "person"}, {"id": "L04", "label": "woman", "matched": "person"}, {"id": "L05", "label": "sky", "matched": "person"}, {"id": "L06", "label": "pillow", "matched": "bed"}, {"id": "L07", "label": "sidewalk", "matched": "fire hydrant"}, {"id": "L08", "label": "speaker", "matched": "tv"}, {"id": "L09", "label": "buses", "matched": "bus"}, {"id": "L10", "label": "surfer", "matched": "person"}, {"id": "L11", "label": "motorbike", "matched": "person"}, {"id": "L12", "label": "shelf", "matched": "book"}, {"id": "L13", "label": "street sign", "matched": "traffic light"}, {"id": "L14", "label": "badminton racket", "matched": "tennis racket"}, {"id": "L15", "label": "plate", "matched": "dining table"}, {"id": "L16", "label": "bread", "matched": "dining table"}, {"id": "L17", "label": "vases", "matched": "vase"}, {"id": "L18", "label": "food", "matched": "bowl"}, {"id": "L19", "label": "stove", "matched": "oven"}, {"id": "L20", "label": "cabinet", "matched": "oven"}, {"id": "L21", "label": "phone", "matched": "cell phone"}, {"id": "L22", "label": "face", "matched": "person"}, {"id": "L23", "label": "floor", "matched": "toilet"}, {"id": "L24", "label": "bush", "matched": "person"}, {"id": "L25", "label": "shelves", "matched": "book"}, {"id": "L26", "label": "shirt", "matched": "person"}, {"id": "L27", "label": "tree", "matched": "person"}, {"id": "L28", "label": "blender", "matched": "dining table"}, {"id": "L29", "label": "kitchen", "matched": "person"}, {"id": "L30", "label": "flowers", "matched": "potted plant"}, {"id": "L31", "label": "station", "matched": "train"}, {"id": "L32", "label": "pigeons", "matched": "bird"}, {"id": "L33", "label": "glass", "matched": "wine glass"}, {"id": "L34", "label": "helmet", "matched": "person"}, {"id": "L35", "label": "man", "matched": "person"}, {"id": "L36", "label": "sofa", "matched": "couch"}, {"id": "L37", "label": "t-shirt", "matched": "person"}, {"id": "L38", "label": "vending machine", "matched": "parking meter"}, {"id": "L39", "label": "speakers", "matched": "tv"}, {"id": "L40", "label": "monitor", "matched": "tv"}, {"id": "L41", "label": "gloves", "matched": "person"}, {"id": "L42", "label": "horses", "matched": "horse"}, {"id": "L43", "label": "table", "matched": "dining table"}, {"id": "L44", "label": "window", "matched": "person"}, {"id": "L45", "label": "boxes", "matched": "laptop"}, {"id": "L46", "label": "suit", "matched": "person"}, {"id": "L47", "label": "hand", "matched": "person"}, {"id": "L48", "label": "shoes", "matched": "person"}, {"id": "L49", "label": "cabinets", "matched": "oven"}, {"id": "L50", "label": "candle", "matched": "cake"}];const NM={1:"synonym",2:"finer_grained",3:"out_of_ontology",4:"unsure"};const KEY="laod_b1_v1";let st={};try{st=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+let i=0;const $=id=>document.getElementById(id);const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+function show(){const c=C[i],s=st[c.id]||{};$("lab").textContent=c.label;$("mat").textContent=c.matched;$("note").value=s.note||"";[1,2,3,4].forEach(k=>$("b"+k).classList.toggle("sel",s.v===k));
+const n=C.filter(x=>(st[x.id]||{}).v).length;$("count").textContent=n+" / "+C.length;$("prog").style.width=(100*n/C.length)+"%";$("pos").textContent=(i+1)+" / "+C.length}
+function set(v){const c=C[i];st[c.id]=Object.assign(st[c.id]||{},{v});save();if(i<C.length-1)i++;show()}
+function go(d){i=Math.min(C.length-1,Math.max(0,i+d));show()}
+[1,2,3,4].forEach(k=>$("b"+k).onclick=()=>set(k));$("prev").onclick=()=>go(-1);$("next").onclick=()=>go(1);
+$("note").oninput=e=>{const c=C[i];st[c.id]=Object.assign(st[c.id]||{},{note:e.target.value});save()};
+document.addEventListener("keydown",e=>{if(e.target.tagName==="TEXTAREA")return;if("1234".includes(e.key)&&e.key!=="")set(+e.key);else if(e.key==="ArrowLeft")go(-1);else if(e.key==="ArrowRight")go(1)});
+$("exp").onclick=()=>{const rows=["id,label,matched,human,note"].concat(C.map(c=>{const s=st[c.id]||{};return [c.id,JSON.stringify(c.label),JSON.stringify(c.matched),NM[s.v]||"",JSON.stringify(s.note||"")].join(",")}));
+const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([rows.join("\n")],{type:"text/csv"}));a.download="b1_labels.csv";a.click()};show();
+</script></body></html>

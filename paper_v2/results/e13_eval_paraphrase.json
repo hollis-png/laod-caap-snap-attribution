@@ -1,0 +1,33 @@
+{
+ "images": 5000,
+ "detections": 35465,
+ "CAAP_LO": 0.251,
+ "CAAP_MI": 0.2134,
+ "CAAP_HI": 0.0979,
+ "CAAP_mean": 0.19,
+ "vocab": {
+  "native": {
+   "n": 12673,
+   "tp": 9949,
+   "rate": 0.7851,
+   "n_with_gt_match": 12430,
+   "rate_matched_only": 0.8004
+  },
+  "plural_of_native": {
+   "n": 2024,
+   "tp": 1395,
+   "rate": 0.6892,
+   "n_with_gt_match": 1972,
+   "rate_matched_only": 0.7074
+  },
+  "out_of_vocabulary": {
+   "n": 20768,
+   "tp": 5595,
+   "rate": 0.2694,
+   "n_with_gt_match": 17177,
+   "rate_matched_only": 0.3257
+  }
+ },
+ "gap_all_denominator_pp": 51.6,
+ "gap_matched_denominator_pp": 47.5
+}

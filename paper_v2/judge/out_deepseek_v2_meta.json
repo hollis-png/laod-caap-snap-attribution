@@ -1,0 +1,16 @@
+{
+ "model": "deepseek/deepseek-v4-flash-0731",
+ "prompt_version": "v2",
+ "system_prompt": "Task: decide how a naming word relates to a COCO category.\nYou are given LABEL (the word a vision assistant used for an object in a photo) and CATEGORY (the COCO class that the object's box usually overlapped).\nPick exactly one option:\n- different_thing: LABEL names another object, a component of one, or something worn or attached to it, rather than CATEGORY itself (for example wheel/car, handle/cup, glove/person, lid/pot).\n- same_thing_other_word: LABEL denotes the same kind of object as CATEGORY under a different word, so the two can be swapped (for example bike/bicycle, tv set/tv, cellphone/cell phone).\n- narrower_description: LABEL is still the same object or group as CATEGORY but describes it more specifically or over a different extent (for example puppy/dog, armchair/chair, passengers/person).\n- cannot_tell: the words are unclear or you cannot decide.\nConsider the meanings of the words only, not any image. For words about a person's gender, age or job, and for clothing words relative to person, use your own best judgment from the literal meaning.\nAnswer with JSON only: {\"relation\": \"different_thing\" | \"same_thing_other_word\" | \"narrower_description\" | \"cannot_tell\"}",
+ "user_template": "LABEL: {label}\nCATEGORY: {matched}",
+ "params": {
+  "temperature": 0,
+  "max_tokens": 100,
+  "extra_body": {
+   "reasoning": {
+    "enabled": false
+   }
+  }
+ },
+ "started": "2026-10-09T15:46:32+00:00"
+}

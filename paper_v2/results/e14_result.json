@@ -1,0 +1,115 @@
+{
+ "table1": {
+  "small (2-8%) | native": {
+   "n": 2922,
+   "tp": 2437,
+   "rate": 0.834
+  },
+  "tiny (<2%) | native": {
+   "n": 5104,
+   "tp": 3660,
+   "rate": 0.7171
+  },
+  "tiny (<2%) | out_of_vocabulary": {
+   "n": 5196,
+   "tp": 902,
+   "rate": 0.1736
+  },
+  "large (>25%) | native": {
+   "n": 1629,
+   "tp": 1543,
+   "rate": 0.9472
+  },
+  "medium (8-25%) | out_of_vocabulary": {
+   "n": 2360,
+   "tp": 1084,
+   "rate": 0.4593
+  },
+  "large (>25%) | out_of_vocabulary": {
+   "n": 2390,
+   "tp": 1142,
+   "rate": 0.4778
+  },
+  "medium (8-25%) | native": {
+   "n": 1902,
+   "tp": 1710,
+   "rate": 0.8991
+  },
+  "small (2-8%) | out_of_vocabulary": {
+   "n": 3344,
+   "tp": 1065,
+   "rate": 0.3185
+  },
+  "large (>25%) | plural_of_native": {
+   "n": 148,
+   "tp": 125,
+   "rate": 0.8446
+  },
+  "tiny (<2%) | plural_of_native": {
+   "n": 1419,
+   "tp": 778,
+   "rate": 0.5483
+  },
+  "medium (8-25%) | plural_of_native": {
+   "n": 310,
+   "tp": 267,
+   "rate": 0.8613
+  },
+  "small (2-8%) | plural_of_native": {
+   "n": 549,
+   "tp": 421,
+   "rate": 0.7668
+  }
+ },
+ "size": {
+  "small (2-8%)": {
+   "n": 6815,
+   "tp": 3923,
+   "rate": 0.5756
+  },
+  "tiny (<2%)": {
+   "n": 11719,
+   "tp": 5340,
+   "rate": 0.4557
+  },
+  "large (>25%)": {
+   "n": 4167,
+   "tp": 2810,
+   "rate": 0.6743
+  },
+  "medium (8-25%)": {
+   "n": 4572,
+   "tp": 3061,
+   "rate": 0.6695
+  }
+ },
+ "vocab": {
+  "native": {
+   "n": 11557,
+   "tp": 9350,
+   "rate": 0.809
+  },
+  "out_of_vocabulary": {
+   "n": 13290,
+   "tp": 4193,
+   "rate": 0.3155
+  },
+  "plural_of_native": {
+   "n": 2426,
+   "tp": 1591,
+   "rate": 0.6558
+  }
+ },
+ "aspect": {
+  "compact": {
+   "n": 22208,
+   "tp": 12480,
+   "rate": 0.562
+  },
+  "elongated": {
+   "n": 5065,
+   "tp": 2654,
+   "rate": 0.524
+  }
+ }
+}

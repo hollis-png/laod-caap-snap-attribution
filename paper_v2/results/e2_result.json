@@ -1,0 +1,46 @@
+{
+ "groups": {
+  "coco_tp": {
+   "n": 15134,
+   "rem_match": 14877,
+   "rem_match_added_instance": 1408
+  },
+  "fail_overlap_other_class": {
+   "n": 6494,
+   "rem_match": 216,
+   "rem_match_added_instance": 167
+  },
+  "fail_no_overlap": {
+   "n": 3940,
+   "rem_match": 141,
+   "rem_match_added_instance": 140
+  },
+  "fail_loose_box_on_named_object": {
+   "n": 1705,
+   "rem_match": 409,
+   "rem_match_added_instance": 305
+  }
+ },
+ "coco_fail_n": 12139,
+ "rem_rescued": 766,
+ "rem_rescue_rate": 0.06310239723206194,
+ "rem_rescued_by_added_instance": 612,
+ "rem_rescued_added_rate": 0.05041601449872312,
+ "by_vocab": {
+  "native": {
+   "n": 11557,
+   "coco": 0.8090334861988405,
+   "coco_or_rem": 0.8476248161287532
+  },
+  "oov": {
+   "n": 13290,
+   "coco": 0.31550037622272387,
+   "coco_or_rem": 0.327163280662152
+  },
+  "plural": {
+   "n": 2426,
+   "coco": 0.6558120362737015,
+   "coco_or_rem": 0.7238252267106348
+  }
+ }
+}

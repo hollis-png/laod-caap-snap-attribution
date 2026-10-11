@@ -1,0 +1,101 @@
+id,model_label,word_a1,word_a2,judged_a1,judged_a2
+B002,shelf,櫃子,電視桌,valid,valid
+B003,street sign,sign,路牌,valid,valid
+B004,helmet,hat,捕手面具,valid,valid
+B005,lamp post,路燈,路燈,valid,valid
+B006,plate,盤子,盤子,valid,valid
+B014,pans,平底鍋,平底鍋,valid,valid
+B016,traffic light,路燈,紅綠燈,valid,valid
+B019,telephone,電話,電話,valid,valid
+B020,chair,椅子,,wrong,wrong
+B021,bottles,瓶子,酒瓶,valid,valid
+B023,bread,面包,蛋糕,valid,valid
+B024,hat,帽子,帽子,valid,valid
+B025,blinds,百葉窗,百葉窗,valid,valid
+B026,bottle,瓶子,罐子,valid,valid
+B029,flag,國旗,國旗,valid,valid
+B030,table,桌子,高腳桌,valid,valid
+B032,sky,,,wrong,wrong
+B035,door,門,門,valid,valid
+B041,lamp,檯燈,檯燈,valid,valid
+B042,boots,靴子,雨鞋,valid,valid
+B045,paper towel,紙巾捲,衛生紙,valid,valid
+B047,gloves,手套,手,valid,valid
+B049,field,,,wrong,wrong
+B050,cabinet,櫥櫃,櫃子,valid,valid
+B051,mirror,鏡子,窗戶,valid,valid
+B052,gloves,手套,手,valid,valid
+B054,lamps,檯燈,檯燈,valid,valid
+B056,plate,盤子,盤子,valid,valid
+B058,pot,鍋子,瓷鍋,valid,valid
+B059,helmet,護目鏡,帽子、墨鏡,valid,ambiguous
+B061,beans,豆子,福豆,wrong,wrong
+B065,shoes,鞋子,布鞋,valid,valid
+B066,sky,,,wrong,wrong
+B073,tomatoes,番茄,番茄,valid,valid
+B075,street sign,路牌,告示牌,valid,valid
+B077,gloves,手套,手套,valid,valid
+B078,pants,褲子,下半身,valid,valid
+B082,fish,魚,魚,valid,valid
+B083,lamp,路燈,燈,valid,valid
+B084,trash can,垃圾桶,垃圾桶,valid,valid
+B085,cabinet,櫃子,門,valid,valid
+B087,lips,嘴脣,嘴巴,valid,valid
+B089,cabinet,櫃子,櫃子門,valid,valid
+B091,pants,長褲,下半身,valid,valid
+B092,sheep,羊,羊,valid,valid
+B098,lamp,檯燈,桌燈,valid,valid
+B100,hat,帽子,帽子,valid,valid
+B103,motorbike,機車,機車,valid,valid
+B107,streetlights,電線杆,電線杆,valid,wrong
+B108,donut,甜甜圈,甜甜圈,valid,valid
+B109,hair,人頭,人物頭部,valid,valid
+B111,dresser,櫃子,櫃子,valid,valid
+B113,street sign,招牌,招牌,valid,valid
+B114,stop sign,路牌,交通號誌,valid,valid
+B116,basket,籃子,水果籃,valid,valid
+B117,bottles,瓶子,,valid,wrong
+B118,tennis racket,網球拍,運動員、球拍,valid,wrong
+B119,person,人,人物,valid,valid
+B120,calendar,日曆,月曆,valid,valid
+B130,umbrella,雨傘,傘,valid,valid
+B132,glove,手套,手,valid,valid
+B135,burger,漢堡,漢堡,valid,valid
+B138,shelf,架子,茶几,valid,valid
+B139,flag,旗子,旗子,valid,valid
+B141,cabinet,櫥櫃,櫃子,valid,valid
+B143,kites,風箏,,valid,ambiguous
+B144,wristband,手腕,手腕,valid,wrong
+B147,bottles,花瓶,瓶子,valid,valid
+B148,shirt,襯衫,身體,valid,valid
+B149,bench,長椅,,valid,wrong
+B150,towel,,毛巾,ambiguous,valid
+B153,bottle,瓶子,酒瓶,valid,valid
+B154,lamp,檯燈,燈,valid,valid
+B155,towel,毛巾,籃子,valid,wrong
+B156,wall,看板,,valid,wrong
+B158,road sign,路牌,路牌,valid,valid
+B159,clock,圓盤,鐘,valid,valid
+B162,pictures,相框,畫框,valid,valid
+B164,chest of drawers,櫥櫃,櫃子,valid,valid
+B165,pumpkin,南瓜,南瓜燈,valid,valid
+B166,sink,,洗手台,valid,valid
+B167,train,火車車廂,火車,valid,valid
+B168,hat,帽子,帽子,valid,valid
+B169,wall,,,wrong,wrong
+B170,pillows,枕頭,枕頭,valid,wrong
+B172,printer,傳真機,傳真機,valid,valid
+B175,shoes,鞋子,鞋子,valid,valid
+B176,tree,樹,樹,valid,valid
+B178,car,車,車,valid,valid
+B180,plate,盤子,盤子,valid,valid
+B181,shower curtain,浴簾,浴簾,valid,valid
+B182,sky,,,wrong,wrong
+B183,sky,,,wrong,wrong
+B185,person,人,人,valid,valid
+B186,frame,畫框,畫框,valid,valid
+B188,shorts,短褲,短褲,valid,valid
+B189,person,人,人,valid,valid
+B191,shelf,櫥櫃,浴室櫃,valid,valid
+B193,sky,,,wrong,wrong
+B194,building,建築,大樓,valid,valid

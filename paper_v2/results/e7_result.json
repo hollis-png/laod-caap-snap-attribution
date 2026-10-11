@@ -1,0 +1,62 @@
+{
+ "coco": {
+  "images": 5000,
+  "detections": 27273,
+  "gt_boxes": 36781,
+  "CAAP_LO": 0.2682,
+  "CAAP_MI": 0.2309,
+  "CAAP_HI": 0.1132,
+  "CAAP_mean": 0.2068,
+  "detection_hit_rate_iou05": 0.5549
+ },
+ "rem": {
+  "images": 5000,
+  "detections": 27273,
+  "gt_boxes": 40713,
+  "CAAP_LO": 0.2544,
+  "CAAP_MI": 0.2234,
+  "CAAP_HI": 0.1268,
+  "CAAP_mean": 0.2037,
+  "detection_hit_rate_iou05": 0.5736
+ },
+ "coco_on_lvis_images": {
+  "images": 4809,
+  "detections": 26728,
+  "gt_boxes": 36060,
+  "CAAP_LO": 0.267,
+  "CAAP_MI": 0.2298,
+  "CAAP_HI": 0.1121,
+  "CAAP_mean": 0.2057,
+  "detection_hit_rate_iou05": 0.5543
+ },
+ "rem_on_lvis_images": {
+  "images": 4809,
+  "detections": 26728,
+  "gt_boxes": 39980,
+  "CAAP_LO": 0.253,
+  "CAAP_MI": 0.2222,
+  "CAAP_HI": 0.1256,
+  "CAAP_mean": 0.2025,
+  "detection_hit_rate_iou05": 0.5732
+ },
+ "lvis": {
+  "images": 4809,
+  "detections": 26728,
+  "gt_boxes": 50672,
+  "CAAP_LO": 0.1391,
+  "CAAP_MI": 0.1191,
+  "CAAP_HI": 0.0684,
+  "CAAP_mean": 0.1099,
+  "detection_hit_rate_iou05": 0.4903
+ },
+ "union_rem_lvis": {
+  "images": 4809,
+  "detections": 26728,
+  "gt_boxes": 72619,
+  "CAAP_LO": 0.202,
+  "CAAP_MI": 0.1748,
+  "CAAP_HI": 0.0945,
+  "CAAP_mean": 0.1589,
+  "detection_hit_rate_iou05": 0.7231
+ }
+}

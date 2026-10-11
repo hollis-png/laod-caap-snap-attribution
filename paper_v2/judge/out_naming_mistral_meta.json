@@ -1,0 +1,15 @@
+{
+ "model": "mistralai/mistral-large-4-0",
+ "system_prompt": "You compare two words that name the content of a box in a photo. WORD_A is the label an AI assistant gave (English). WORD_B is what a person wrote after looking at the box (Chinese or English).\nAnswer same if both words name the same kind of object: a synonym, a plural or singular form, or a broader or narrower term for the same thing (for example hat and cap, shelf and cabinet, bottles and bottle).\nAnswer different if they name different things, including a part and the whole (handle and cup), an object and what is worn on it, or two unrelated objects.\nJudge the meaning of the words only.\nReply with JSON only: {\"answer\": \"same\" | \"different\"}",
+ "user_template": "WORD_A: {a}\nWORD_B: {b}",
+ "params": {
+  "temperature": 0,
+  "max_tokens": 60,
+  "extra_body": {
+   "reasoning": {
+    "enabled": false
+   }
+  }
+ },
+ "started": "2026-10-11T16:59:51+00:00"
+}

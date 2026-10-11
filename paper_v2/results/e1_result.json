@@ -1,0 +1,67 @@
+{
+ "images_overlap": 4809,
+ "detections_in_overlap": 26728,
+ "groups": {
+  "coco_tp": {
+   "n": 14815,
+   "lvis_match": 8387,
+   "lvis_match_rate": 0.5661154235572056
+  },
+  "fail_overlap_other_class": {
+   "n": 6381,
+   "lvis_match": 2273,
+   "lvis_match_rate": 0.35621375959880897
+  },
+  "fail_no_overlap": {
+   "n": 3852,
+   "lvis_match": 1632,
+   "lvis_match_rate": 0.4236760124610592
+  },
+  "fail_loose_box_on_named_object": {
+   "n": 1680,
+   "lvis_match": 813,
+   "lvis_match_rate": 0.48392857142857143
+  }
+ },
+ "coco_fail_n": 11913,
+ "coco_fail_rescued_by_lvis": 4718,
+ "coco_fail_rescue_rate": 0.39603794174431295,
+ "tp_rate_coco": 0.5542876384316073,
+ "tp_rate_lvis": 0.4903097874887758,
+ "tp_rate_union": 0.7308066447171505,
+ "by_vocab": {
+  "native": {
+   "n": 11312,
+   "coco": 0.807549504950495,
+   "lvis": 0.5602899575671852,
+   "union": 0.8838401697312589
+  },
+  "oov": {
+   "n": 13028,
+   "coco": 0.315858151673319,
+   "lvis": 0.40313171630334665,
+   "union": 0.5719987718759595
+  },
+  "plural": {
+   "n": 2388,
+   "coco": 0.6553601340033501,
+   "lvis": 0.6344221105527639,
+   "union": 0.8722780569514238
+  }
+ },
+ "ap50_coco": {
+  "ap": 0.2745788954584292,
+  "tp": 13951,
+  "n_gt": 36060
+ },
+ "ap50_lvis": {
+  "ap": 0.1440413252714841,
+  "tp": 12348,
+  "n_gt": 50672
+ },
+ "ap50_union_dedup": {
+  "ap": 0.20593328027633137,
+  "tp": 18532,
+  "n_gt": 74733
+ }
+}

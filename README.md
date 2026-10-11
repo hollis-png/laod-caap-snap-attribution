@@ -138,6 +138,21 @@ If you use this code, please cite the paper and the original [LAOD](https://arxi
 }
 ```
 
+## Paper v2 artifacts (`paper_v2/`)
+
+Data, labels and results behind the revised paper (arXiv v2, posted after this commit; the arXiv number is added when it is posted). Everything here is text, CSV or JSON; no COCO images are redistributed.
+
+| Folder | Content |
+|---|---|
+| `paper_v2/data/` | The 5,000-image predictions (`coco_val_subset_predictions.jsonl`: LLM labels and detections per image) and the per-detection table (`detections.csv`, 27,273 rows); `README.md` describes the columns |
+| `paper_v2/audit_label_visible/` | Cases and labels of the two audits in which the annotator saw the label (author's labels, second annotator's labels), the judge human-reference sample (`b1_judge_reference/`), and the agreement scripts. The forms (`index.html`) need the COCO crops, which are not included |
+| `paper_v2/audit_label_free/` | The label-free audit: `PREREGISTRATION.md`, the annotator instructions (in Chinese), the form template, the builder and analysis scripts, `returned/annotator1.csv` and `annotator2.csv`, results. `item_table.json` (item id, pool, kind, model label, earlier case id) replaces the private answer key as the first argument of `analyze_blind_audit.py`: `python analyze_blind_audit.py item_table.json ../audit_label_visible/human_labels_final.csv out.json returned/annotator1.csv returned/annotator2.csv` reproduces `results_blind_audit.json` |
+| `paper_v2/judge/` | LLM-judge prompts, runners, raw responses and results (the three-way and two-way contrast, the text-only variant, and the naming-agreement check `run_naming.py`) |
+| `paper_v2/results/` | Result JSON and logs of the analyses E1–E22 and `REPORT.md`, which describes each analysis, its inputs and numbers |
+| `paper_v2/figures/` | Figure scripts and the five figures |
+
+The analysis scripts themselves are in `selfreview_analysis/` and `eval/`.
+
 ## Data and third-party licences
 
 **Not included.** No COCO images are redistributed; download them yourself from the COCO site. Model weights are not included either.
@@ -152,9 +167,9 @@ If you use this code, please cite the paper and the original [LAOD](https://arxi
 | `Qwen/Qwen2.5-VL-7B-Instruct`, `IDEA-Research/grounding-dino-tiny` | Apache-2.0 (model-card metadata, checked 2026-10-11). |
 | CLIP `openai/clip-vit-base-patch32` | OpenAI's CLIP code is MIT-licensed. The Hugging Face weights have no licence field; the model card limits use to research and calls deployed use cases out of scope. We use CLIP only as a text encoder for the SNAP score. |
 | LVIS v1, COCO-ReM | Used only for the re-scoring scripts `e1`/`e2`/`e7`. LVIS annotations: CC BY 4.0 (images come from COCO). COCO-ReM: dataset card CC-BY-4.0, code MIT. |
-| LLM judges (DeepSeek-V4-Flash, Mistral Large 4 via OpenRouter) | Text only is sent (the judge prompt, a label and a COCO category name), never images; some providers retain prompts (see the paper, §2.3). DeepSeek-V4-Flash weights are MIT-licensed; the Mistral Large 4 licence was not published when this was written, and it is used through the API only. API keys must come from the environment, never from this repo. |
+| LLM judges (DeepSeek-V4-Flash, Mistral Large 4 via OpenRouter) | Text only is sent (the judge prompt, a label and a COCO category name), never images; some providers retain prompts (see the Data paragraph of the paper's method section). DeepSeek-V4-Flash weights are MIT-licensed; the Mistral Large 4 licence was not published when this was written, and it is used through the API only. API keys must come from the environment, never from this repo. |
 
-**Annotations.** The human labels from the audits are described in the paper (Appendix B lists what is released). They were produced by the author and by anonymous annotators who did not see the AI labels.
+**Annotations.** The human labels from the audits are in `paper_v2/audit_label_visible/` (labels by the author and by a second anonymous annotator, who saw each box with its label) and `paper_v2/audit_label_free/` (two further anonymous annotators who saw only the box). The COCO images and the image crops of the audit forms are not included.
 
 ## License
 

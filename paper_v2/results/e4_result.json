@@ -1,0 +1,18 @@
+{
+ "gemma3_yoloworld": {
+  "images": 5000,
+  "detections": 27273,
+  "LO": 0.2682,
+  "MI": 0.2309,
+  "HI": 0.1132,
+  "mean": 0.2068
+ },
+ "gemma3_groundingdino": {
+  "images": 5000,
+  "detections": 39555,
+  "LO": 0.2994,
+  "MI": 0.2574,
+  "HI": 0.122,
+  "mean": 0.2294
+ }
+}

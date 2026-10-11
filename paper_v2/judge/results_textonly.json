@@ -1,0 +1,65 @@
+{
+ "deepseek": {
+  "unparsed_labels": 0,
+  "same_labels": 151,
+  "same_n": 3338,
+  "same_rate": 0.8702816057519472,
+  "same_ci": [
+   0.8584561619045967,
+   0.8812557382644597
+  ],
+  "diff_labels": 624,
+  "diff_n": 8140,
+  "diff_rate": 0.15823095823095823,
+  "diff_ci": [
+   0.15046399834521834,
+   0.16632035561372904
+  ],
+  "gap_pp": 71.2050647520989,
+  "vs_overlap_reference_judge": {
+   "n": 775,
+   "agree": 0.8748387096774194,
+   "kappa": 0.6628576041475132,
+   "crosstab": {
+    "same|same": 139,
+    "different|different": 539,
+    "different|same": 85,
+    "same|different": 12
+   }
+  }
+ },
+ "mistral": {
+  "unparsed_labels": 0,
+  "same_labels": 166,
+  "same_n": 3596,
+  "same_rate": 0.8389877641824249,
+  "same_ci": [
+   0.8266139182949457,
+   0.8506381030162143
+  ],
+  "diff_labels": 609,
+  "diff_n": 7882,
+  "diff_rate": 0.1492007104795737,
+  "diff_ci": [
+   0.14150597172929813,
+   0.15723723406879958
+  ],
+  "gap_pp": 68.97870537028513,
+  "vs_overlap_reference_judge": {
+   "n": 775,
+   "agree": 0.8812903225806452,
+   "kappa": 0.6871187719960332,
+   "crosstab": {
+    "same|same": 149,
+    "different|different": 534,
+    "different|same": 75,
+    "same|different": 17
+   }
+  }
+ },
+ "judge_vs_judge": {
+  "n": 775,
+  "agree": 0.9290322580645162,
+  "kappa": 0.7820172545169094
+ }
+}

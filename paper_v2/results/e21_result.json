@@ -1,0 +1,19 @@
+{
+ "full": {
+  "n": 5000,
+  "pearson_r": 0.7582196719050507,
+  "max_snap_minus_caap": 1.0,
+  "max_caap_minus_snap": 0.5,
+  "mean_caap": 0.40961755005659334,
+  "mean_snap": 0.6466303506664681
+ },
+ "pilot": {
+  "n": 200,
+  "pearson_r": 0.7852235077462963,
+  "max_snap_minus_caap": 0.725,
+  "max_caap_minus_snap": 0.13749999999999996,
+  "mean_caap": 0.42860838260053385,
+  "mean_snap": 0.6518959763578591
+ },
+ "snap_tau_1.00_corpus": 0.04687418751097346
+}

@@ -1,0 +1,8 @@
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4233.43it/s]
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 88780.14it/s]
+clip real {'LO': 0.5589, 'MI': 0.5288, 'HI': 0.2546, 'ten_threshold_mean': 0.4556, 'paper_four_mean': 0.4559}
+clip shuffled {'LO': 0.5589, 'MI': 0.4422, 'HI': 0.0105, 'ten_threshold_mean': 0.3477, 'paper_four_mean': 0.3297}
+clip unrelated-pair cosine {'n_pairs': 6320, 'median': 0.7722448110580444, 'min': 0.6072279810905457, 'admitted_at': {'0.5': 1.0, '0.6': 1.0, '0.7': 0.9382911392405063, '0.8': 0.25759493670886074, '0.9': 0.0015822784810126582}}
+minilm real {'LO': 0.2722, 'MI': 0.232, 'HI': 0.1849, 'ten_threshold_mean': 0.2299, 'paper_four_mean': 0.2242}
+minilm shuffled {'LO': 0.006, 'MI': 0.0027, 'HI': 0.0021, 'ten_threshold_mean': 0.0035, 'paper_four_mean': 0.003}
+minilm unrelated-pair cosine {'n_pairs': 6320, 'median': 0.27382892370224, 'min': -0.05100950226187706, 'admitted_at': {'0.5': 0.016139240506329113, '0.6': 0.0031645569620253164, '0.7': 0.0006329113924050633, '0.8': 0.0, '0.9': 0.0}}

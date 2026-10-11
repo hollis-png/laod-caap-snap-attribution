@@ -1,0 +1,225 @@
+{
+ "a1_first": {
+  "all": {
+   "valid_counts": {
+    "no_overlap_n200": 151,
+    "other_class_n96": 88
+   },
+   "n": {
+    "no_overlap_n200": 200,
+    "other_class_n96": 96
+   },
+   "share": 0.7353667243320428,
+   "lo": 0.6906545355233157,
+   "hi": 0.7627474912793502,
+   "precision": 0.8822137889732214
+  },
+  "stuff_set_aside": {
+   "valid_counts": {
+    "no_overlap_n200": 146,
+    "other_class_n96": 70
+   },
+   "n": {
+    "no_overlap_n200": 200,
+    "other_class_n96": 96
+   },
+   "share": 0.6269609660323475,
+   "lo": 0.5704709347570966,
+   "hi": 0.672654294686083,
+   "precision": 0.8339632298121464
+  }
+ },
+ "a1_final": {
+  "all": {
+   "valid_counts": {
+    "no_overlap_n200": 151,
+    "other_class_n96": 86
+   },
+   "n": {
+    "no_overlap_n200": 200,
+    "other_class_n96": 96
+   },
+   "share": 0.7242232336546118,
+   "lo": 0.6774259325665839,
+   "hi": 0.7543630007780717,
+   "precision": 0.8772539080164754
+  },
+  "stuff_set_aside": {
+   "valid_counts": {
+    "no_overlap_n200": 146,
+    "other_class_n96": 68
+   },
+   "n": {
+    "no_overlap_n200": 200,
+    "other_class_n96": 96
+   },
+   "share": 0.6158174753549166,
+   "lo": 0.5592015127700387,
+   "hi": 0.6628090905923805,
+   "precision": 0.8290033488554003
+  }
+ },
+ "a2": {
+  "all": {
+   "valid_counts": {
+    "no_overlap_n200": 166,
+    "other_class_n96": 85
+   },
+   "n": {
+    "no_overlap_n200": 200,
+    "other_class_n96": 96
+   },
+   "share": 0.7429945149243485,
+   "lo": 0.6960102740220848,
+   "hi": 0.7726932615315252,
+   "precision": 0.885608859189186
+  },
+  "stuff_set_aside": {
+   "valid_counts": {
+    "no_overlap_n200": 161,
+    "other_class_n96": 67
+   },
+   "n": {
+    "no_overlap_n200": 200,
+    "other_class_n96": 96
+   },
+   "share": 0.6345887566246533,
+   "lo": 0.5780847574599305,
+   "hi": 0.6812716259727857,
+   "precision": 0.8373583000281108
+  }
+ },
+ "both_valid": {
+  "all": {
+   "valid_counts": {
+    "no_overlap_n200": 144,
+    "other_class_n96": 84
+   },
+   "n": {
+    "no_overlap_n200": 200,
+    "other_class_n96": 96
+   },
+   "share": 0.7017196638932366,
+   "lo": 0.6532178627866465,
+   "hi": 0.7347505300822359,
+   "precision": 0.8672377442892237
+  },
+  "stuff_set_aside": {
+   "valid_counts": {
+    "no_overlap_n200": 139,
+    "other_class_n96": 66
+   },
+   "n": {
+    "no_overlap_n200": 200,
+    "other_class_n96": 96
+   },
+   "share": 0.5933139055935415,
+   "lo": 0.5360976173069194,
+   "hi": 0.6418635923669194,
+   "precision": 0.8189871851281487
+  }
+ },
+ "either_valid": {
+  "all": {
+   "valid_counts": {
+    "no_overlap_n200": 173,
+    "other_class_n96": 89
+   },
+   "n": {
+    "no_overlap_n200": 200,
+    "other_class_n96": 96
+   },
+   "share": 0.7766415753631545,
+   "lo": 0.7348993704601047,
+   "hi": 0.799797345086066,
+   "precision": 0.9005849038731836
+  },
+  "stuff_set_aside": {
+   "valid_counts": {
+    "no_overlap_n200": 168,
+    "other_class_n96": 71
+   },
+   "n": {
+    "no_overlap_n200": 200,
+    "other_class_n96": 96
+   },
+   "share": 0.6682358170634594,
+   "lo": 0.612847475724908,
+   "hi": 0.7115544548217014,
+   "precision": 0.8523343447121084
+  }
+ },
+ "confusion_a1first_rows_a2_cols": {
+  "ambiguous|ambiguous": 8,
+  "ambiguous|valid": 10,
+  "ambiguous|wrong": 1,
+  "valid|ambiguous": 7,
+  "valid|valid": 228,
+  "valid|wrong": 4,
+  "wrong|ambiguous": 7,
+  "wrong|valid": 13,
+  "wrong|wrong": 18
+ },
+ "disagreement_labels_valid_vs_not": [
+  [
+   "person",
+   7
+  ],
+  [
+   "car",
+   2
+  ],
+  [
+   "bottle",
+   2
+  ],
+  [
+   "sheep",
+   2
+  ],
+  [
+   "shelf",
+   2
+  ],
+  [
+   "helmet",
+   2
+  ],
+  [
+   "cabinet",
+   1
+  ],
+  [
+   "pizza",
+   1
+  ],
+  [
+   "speaker",
+   1
+  ],
+  [
+   "broom",
+   1
+  ],
+  [
+   "truck",
+   1
+  ],
+  [
+   "street sign",
+   1
+  ],
+  [
+   "tissue box",
+   1
+  ],
+  [
+   "kites",
+   1
+  ],
+  [
+   "bottles",
+   1
+  ]
+ ]
+}

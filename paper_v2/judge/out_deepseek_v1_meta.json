@@ -1,0 +1,16 @@
+{
+ "model": "deepseek/deepseek-v4-flash-0731",
+ "prompt_version": "v1",
+ "system_prompt": "You classify the relation between two words.\nLABEL is a word an AI assistant used to name an object in a photo. CATEGORY is the COCO object category whose annotated boxes the LABEL's box most often overlapped.\nChoose exactly one relation of LABEL to CATEGORY:\n- synonym: LABEL refers to the same kind of thing as CATEGORY, only worded differently; they are largely interchangeable. Examples: sofa/couch, phone/cell phone, television/tv, horses/horse, vehicle/car.\n- finer_grained: LABEL still refers to the same object or the same group of objects as CATEGORY, but is more specific or covers a different extent. Examples: woman/person, boy/person, surfer/person, table/dining table, flowers/vase.\n- out_of_ontology: LABEL refers to a different object, a part of the object, or an accessory, not CATEGORY itself. Examples: helmet/person, hat/person, shoes/person, plate/dining table, cabinet/oven, shelf/book.\n- unsure: the words are unclear or you cannot decide.\nJudge the meaning of the words only. For gender, age or occupation words relative to person, use your own best judgment. For clothing words such as suit or jacket relative to person, judge by their literal meaning.\nReply with JSON only: {\"relation\": \"synonym\" | \"finer_grained\" | \"out_of_ontology\" | \"unsure\"}",
+ "user_template": "LABEL: {label}\nCATEGORY: {matched}",
+ "params": {
+  "temperature": 0,
+  "max_tokens": 100,
+  "extra_body": {
+   "reasoning": {
+    "enabled": false
+   }
+  }
+ },
+ "started": "2026-10-09T15:46:32+00:00"
+}

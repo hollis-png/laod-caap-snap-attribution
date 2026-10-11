@@ -1,0 +1,124 @@
+{
+ "vocab_values_seen": [
+  "native",
+  "out_of_vocabulary",
+  "plural_of_native"
+ ],
+ "total": {
+  "n": 27273,
+  "hit_detection_level": 15134,
+  "tp_one_to_one": 14250,
+  "dup": 884
+ },
+ "by_vocab": {
+  "native": {
+   "n": 11557,
+   "hit_detection_level": 9350,
+   "tp_one_to_one": 8998,
+   "dup": 352,
+   "detection_hit_rate": 0.8090334861988405,
+   "one_to_one_rate": 0.7785757549537077,
+   "dup_share_of_hits": 0.03764705882352941,
+   "dup_share_of_hits_ci": [
+    0.03397488305626002,
+    0.0416990090481348
+   ],
+   "share_of_all_detections": 0.42375242914237526,
+   "share_of_all_dups": 0.39819004524886875
+  },
+  "out_of_vocabulary": {
+   "n": 13290,
+   "hit_detection_level": 4193,
+   "tp_one_to_one": 3709,
+   "dup": 484,
+   "detection_hit_rate": 0.31550037622272387,
+   "one_to_one_rate": 0.2790820165537998,
+   "dup_share_of_hits": 0.1154304793703792,
+   "dup_share_of_hits_ci": [
+    0.1061084381288198,
+    0.12545655588953913
+   ],
+   "share_of_all_detections": 0.4872951270487295,
+   "share_of_all_dups": 0.5475113122171946
+  },
+  "plural_of_native": {
+   "n": 2426,
+   "hit_detection_level": 1591,
+   "tp_one_to_one": 1543,
+   "dup": 48,
+   "detection_hit_rate": 0.6558120362737015,
+   "one_to_one_rate": 0.6360263808738664,
+   "dup_share_of_hits": 0.03016970458830924,
+   "dup_share_of_hits_ci": [
+    0.02283028601242135,
+    0.03977254551642766
+   ],
+   "share_of_all_detections": 0.08895244380889525,
+   "share_of_all_dups": 0.05429864253393665
+  }
+ },
+ "gap_pp_detection_level": 49.353310997611665,
+ "gap_pp_one_to_one": 49.949373839990784,
+ "top_duplicate_labels": [
+  [
+   "man",
+   68
+  ],
+  [
+   "shirt",
+   44
+  ],
+  [
+   "person",
+   37
+  ],
+  [
+   "plate",
+   30
+  ],
+  [
+   "car",
+   26
+  ],
+  [
+   "cake",
+   23
+  ],
+  [
+   "chair",
+   18
+  ],
+  [
+   "woman",
+   18
+  ],
+  [
+   "sofa",
+   15
+  ],
+  [
+   "jacket",
+   14
+  ],
+  [
+   "table",
+   13
+  ],
+  [
+   "wall",
+   13
+  ],
+  [
+   "pizza",
+   11
+  ],
+  [
+   "horses",
+   10
+  ],
+  [
+   "umbrella",
+   9
+  ]
+ ]
+}
