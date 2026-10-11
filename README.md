@@ -4,11 +4,13 @@
 
 Code accompanying the paper *"Attribution Gaps in Zero-Training LLM+OVOD Pipelines: A Fine-Grained Analysis of the CAAP–SNAP Discrepancy"* ([arXiv:2609.32567](https://arxiv.org/abs/2609.32567), 2026).
 
-This repository does **not** re-implement or re-host [LAOD](https://github.com/furkanmumcu/LAOD) itself. It contains the batch-evaluation infrastructure, metric implementations, and analysis scripts we wrote on top of it — LAOD's own pipeline code (`laod.py`, `demo.py`, `draw_utils.py`) has an empty `eval/snap.py` and no batch-evaluation harness, so everything under `eval/` here is original.
+This repository does **not** re-implement or re-host [LAOD](https://github.com/furkanmumcu/LAOD) itself. It contains the batch-evaluation infrastructure, metric implementations, and analysis scripts we wrote on top of it — In the LAOD version we built on (last commit 2025-07-30) the pipeline code (`laod.py`, `demo.py`, `draw_utils.py`) had an empty `eval/snap.py` and no batch-evaluation harness, so everything under `eval/` here is original. LAOD was rewritten on 2026-10-06 and now ships its own evaluation protocol (Sentence-BERT SNAP, maxDets = 100, disjoint CAAP intervals); this repository does not track that version and its numbers are not directly comparable with it.
 
 ## Correction notice (2026-10)
 
-`eval/caap.py` as first released (and as used for arXiv v1) contained a bug: the corpus-level `compute_ca_ap` re-matched the pooled detections against the ground-truth boxes of **all** images, so a detection could match a box in a different image, increasingly so for larger corpora. This inflated corpus-level CAAP (0.38 on the 5,000-image split; the corrected value is **0.21**, per-IoU-interval LO/MI/HI = 0.268 / 0.231 / 0.113). Single-image calls and all detection-level analyses (`phase2_*`, vocabulary and audit scripts) were not affected. The current `eval/caap.py` matches per image and is covered by `tests/test_caap.py` (run `pytest tests`). Anything that cites a corpus CAAP from arXiv v1 or from an older log should be recomputed. The `selfreview_analysis/` directory holds the scripts of the follow-up analysis that found and quantified this and the other corrections.
+`eval/caap.py` as first released (and as used for arXiv v1) contained a bug: the corpus-level `compute_ca_ap` re-matched the pooled detections against the ground-truth boxes of **all** images, so a detection could match a box in a different image, increasingly so for larger corpora. This inflated corpus-level CAAP (0.38 on the 5,000-image split; the corrected value is **0.21**, per-IoU-interval LO/MI/HI = 0.268 / 0.231 / 0.113). Single-image calls and all detection-level analyses (`phase2_*`, vocabulary and audit scripts) were not affected. The current `eval/caap.py` matches per image and is covered by `tests/test_caap.py` (run `pytest tests`). Anything that cites a corpus CAAP from arXiv v1 or from an older log should be recomputed. The `selfreview_analysis/` directory holds the scripts of the follow-up analysis that found and quantified this and the other corrections. The corrected numbers and the revised analysis are in the updated version of the paper (arXiv v2).
+
+A second, smaller fix: `eval/snap.py` computed label embeddings in the caller's order but matched predictions in confidence order, so embeddings and predictions were misaligned whenever the input was not already sorted by confidence. The prediction files used in the paper were already confidence-sorted, so the reported SNAP numbers are unchanged; the fix is covered by `tests/test_snap_order_and_ap.py`.
 
 ## Setup
 
@@ -102,6 +104,12 @@ Scripts written after a self-review of the paper (all read stored predictions or
 | `e10_hi_interval.py` | Which AP implementation choices move the HI-interval CAAP |
 | `e11_pilot_subset.py` | Recompute the 200-image pilot with the full run's predictions |
 | `e13_prompt_variants.py` | Prompt-variant robustness run |
+| `e14_size_by_vocab.py` | Box-size distribution by vocabulary category |
+| `e15_second_annotator.py` | Agreement of the second annotator's labels with the first pass |
+| `e16_eq7_caap.py` | CAAP under the alternative reading (Eq. 7) of LAOD's interval definition |
+| `e17_cluster_bootstrap.py` | Image-clustered bootstrap intervals for the headline rates |
+| `e19_laod_legacy_grid.py` | Our per-IoU CAAP summarised over the threshold sets that LAOD's code produced for its paper (HI includes the unreachable IoU 1.00) |
+| `e18_repeat.sh`, `e18_repeat_summary.py` | Repeat runs of the Gemma label generation (sampling variance of CAAP and SNAP) |
 | `compute_agreement_hh.py` | Cohen's kappa between two human annotators |
 | `judge/` | LLM-judge runs for the vocabulary contrast, including the text-only variant (`run_textonly.py`); needs an OpenRouter key in the environment of the `llm` CLI, never in the repo |
 
@@ -128,6 +136,24 @@ If you use this code, please cite the paper and the original [LAOD](https://arxi
   year    = {2026}
 }
 ```
+
+## Data and third-party licences
+
+**Not included.** No COCO images are redistributed; download them yourself from the COCO site. Model weights are not included either.
+
+**What the pipeline depends on, and under which terms** (check the linked pages yourself before reuse; this list is a pointer, not legal advice):
+
+| Component | Notes |
+|---|---|
+| COCO val2017 annotations | CC BY 4.0. The images carry their original Flickr licences and are not redistributed here. |
+| `google/gemma-3-4b-it` | Gated on Hugging Face; use is governed by the Gemma Terms of Use. |
+| YOLO-World X (`yolov8x-worldv2.pt`, run through `ultralytics`) | YOLO-World is released under GPL-3.0, and `ultralytics` is under its own copyleft licence (AGPL-3.0 at the time of writing; verify). This repo only calls them and does not copy their code; if you redistribute a combined work, check the terms. |
+| `Qwen/Qwen2.5-VL-7B-Instruct`, `IDEA-Research/grounding-dino-tiny` | See their model cards. |
+| CLIP `openai/clip-vit-base-patch32` | OpenAI's CLIP code is MIT-licensed. The Hugging Face weights have no licence field; the model card limits use to research and calls deployed use cases out of scope. We use CLIP only as a text encoder for the SNAP score. |
+| LVIS v1, COCO-ReM | Used only for the re-scoring scripts `e1`/`e2`/`e7`; see their own terms. |
+| LLM judges (DeepSeek-V4-Flash, Mistral Large 4 via OpenRouter) | Only label strings are sent, never images. API keys must come from the environment, never from this repo. |
+
+**Annotations.** The human labels from the audits are described in the paper (Appendix B lists what is released). They were produced by the author and by anonymous annotators who did not see the AI labels.
 
 ## License
 
