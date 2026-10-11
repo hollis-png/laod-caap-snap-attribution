@@ -149,10 +149,10 @@ If you use this code, please cite the paper and the original [LAOD](https://arxi
 | COCO val2017 annotations | CC BY 4.0. The images carry their original Flickr licences and are not redistributed here. |
 | `google/gemma-3-4b-it` | Gated on Hugging Face; use is governed by the Gemma Terms of Use. |
 | YOLO-World X (`yolov8x-worldv2.pt`, run through `ultralytics`) | YOLO-World is released under GPL-3.0; its README says it is supported for commercial use and gives a contact for a commercial licence, and it states no separate licence for the weights. `ultralytics` is released under AGPL-3.0, with a separate Ultralytics Enterprise License for use outside AGPL-3.0 (both from the projects' READMEs, checked 2026-10-11). This repo only calls them and does not copy their code; if you redistribute a combined work, check the terms. |
-| `Qwen/Qwen2.5-VL-7B-Instruct`, `IDEA-Research/grounding-dino-tiny` | See their model cards. |
+| `Qwen/Qwen2.5-VL-7B-Instruct`, `IDEA-Research/grounding-dino-tiny` | Apache-2.0 (model-card metadata, checked 2026-10-11). |
 | CLIP `openai/clip-vit-base-patch32` | OpenAI's CLIP code is MIT-licensed. The Hugging Face weights have no licence field; the model card limits use to research and calls deployed use cases out of scope. We use CLIP only as a text encoder for the SNAP score. |
-| LVIS v1, COCO-ReM | Used only for the re-scoring scripts `e1`/`e2`/`e7`; see their own terms. |
-| LLM judges (DeepSeek-V4-Flash, Mistral Large 4 via OpenRouter) | Only label strings are sent, never images. API keys must come from the environment, never from this repo. |
+| LVIS v1, COCO-ReM | Used only for the re-scoring scripts `e1`/`e2`/`e7`. LVIS annotations: CC BY 4.0 (images come from COCO). COCO-ReM: dataset card CC-BY-4.0, code MIT. |
+| LLM judges (DeepSeek-V4-Flash, Mistral Large 4 via OpenRouter) | Text only is sent (the judge prompt, a label and a COCO category name), never images; some providers retain prompts (see the paper, §2.3). DeepSeek-V4-Flash weights are MIT-licensed; the Mistral Large 4 licence was not published when this was written, and it is used through the API only. API keys must come from the environment, never from this repo. |
 
 **Annotations.** The human labels from the audits are described in the paper (Appendix B lists what is released). They were produced by the author and by anonymous annotators who did not see the AI labels.
 
