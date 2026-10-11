@@ -11,8 +11,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from plot_common import plt, ORANGE, SKY_BLUE, VERMILLION, FIG_SMALL, annotate_bars
 
 CATEGORIES = ["Native COCO-80", "Plural of native", "Out-of-vocabulary"]
-TP_RATES = [80.9, 65.6, 31.6]
-N_VALUES = [11557, 2426, 13290]
+TP_RATES = [80.9, 66.8, 31.0]
+N_VALUES = [11557, 2560, 13156]
 COLORS = [SKY_BLUE, ORANGE, VERMILLION]
 
 fig, ax = plt.subplots(figsize=FIG_SMALL)

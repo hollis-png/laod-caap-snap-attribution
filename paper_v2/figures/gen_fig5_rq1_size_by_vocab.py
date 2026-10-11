@@ -8,7 +8,7 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from plot_common import plt, BLUE, ORANGE, SKY_BLUE, FIG_SINGLE
 bins = ["tiny\n(<2%)", "small\n(2-8%)", "medium\n(8-25%)", "large\n(>25%)"]
-series = {"native vocabulary": ([71.7, 83.4, 89.9, 94.7], BLUE), "plural of native": ([54.8, 76.7, 86.1, 84.5], SKY_BLUE), "out-of-vocabulary": ([17.4, 31.8, 45.9, 47.8], ORANGE)}
+series = {"native vocabulary": ([71.7, 83.4, 89.9, 94.7], BLUE), "plural of native": ([55.9, 77.4, 86.4, 85.5], SKY_BLUE), "out-of-vocabulary": ([16.8, 31.0, 45.4, 47.5], ORANGE)}
 fig, ax = plt.subplots(figsize=FIG_SINGLE)
 for name, (vals, col) in series.items():
     ax.plot(range(4), vals, marker="o", color=col, label=name)

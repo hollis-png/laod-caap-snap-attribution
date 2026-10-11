@@ -30,20 +30,20 @@
   "kappa": 0.8010752688172044
  },
  "deepseek_v1|table": {
-  "same_n": 3945,
-  "same_rate": 0.823574144486692,
+  "same_n": 3812,
+  "same_rate": 0.8208289611752361,
   "diff_n": 7533,
   "diff_rate": 0.12531527943714324
  },
  "deepseek_v2|table": {
-  "same_n": 3622,
-  "same_rate": 0.8633351739370514,
+  "same_n": 3489,
+  "same_rate": 0.8618515333906563,
   "diff_n": 7854,
   "diff_rate": 0.13572701807995927
  },
  "mistral_v1|table": {
-  "same_n": 3585,
-  "same_rate": 0.8677824267782427,
+  "same_n": 3452,
+  "same_rate": 0.8664542294322132,
   "diff_n": 7893,
   "diff_rate": 0.13708349170150766
  }

@@ -18,7 +18,7 @@ cases = {c["id"]: c for c in json.load(open(f"{base}/human_review/cases.json"))}
 rows = list(csv.DictReader(open(f"{base}/human_review/human_labels_final.csv", encoding="utf-8")))
 CORE = {"sky", "wall", "field", "beach", "sea", "baseball field"}
 BROAD = CORE | {"tree", "trees", "building", "house"}
-N_STRATUM = {"no_overlap_n200": 3940, "other_class_n96": 6493}
+N_STRATUM = {"no_overlap_n200": 3940, "other_class_n96": 6468}
 N_FAIL = 12139; N_DET = 27273; N_HIT = 15134  # detection-level rule (section 3.2)
 
 def tally(stuff):

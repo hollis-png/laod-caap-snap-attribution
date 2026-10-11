@@ -40,31 +40,32 @@ COCO80_NAMES = {w.replace("_", " ") for w in COCO80}
 assert len(COCO80_NAMES) == 80, f"expected 80 names, got {len(COCO80_NAMES)}"
 
 
-def my_singularize(w):
-    """Independent re-derivation of a simple pluralization stripper."""
+IRREGULAR = {"people": "person", "mice": "mouse", "knives": "knife", "loaves": "loaf", "shelves": "shelf", "leaves": "leaf"}
+
+
+def candidates(w):
+    """Every plausible singular form of w, written independently of eval/vocab.py (a bug in the first release's suffix
+    rules, see the README correction notice, was found by comparing this script with the library)."""
     w = w.lower().strip()
-    irregular = {"people": "person", "mice": "mouse", "knives": "knife",
-                 "loaves": "loaf", "shelves": "shelf", "leaves": "leaf"}
-    if w in irregular:
-        return irregular[w]
+    if w in IRREGULAR:
+        return {IRREGULAR[w]}
+    c = set()
     if len(w) > 3 and w.endswith("ies"):
-        return w[:-3] + "y"
-    if len(w) > 3 and (w.endswith("ses") or w.endswith("xes") or w.endswith("zes")
-                        or w.endswith("ches") or w.endswith("shes")):
-        return w[:-2]
+        c.add(w[:-3] + "y"); c.add(w[:-1])
+    if len(w) > 2 and w.endswith("es"):
+        c.add(w[:-2])
     if len(w) > 1 and w.endswith("s") and not w.endswith("ss"):
-        return w[:-1]
-    return w
-
-
-COCO80_SINGULAR = {my_singularize(n) for n in COCO80_NAMES}
+        c.add(w[:-1])
+    if w + "s" in COCO80_NAMES:
+        c.add(w + "s")
+    return c
 
 
 def classify(label):
     l = label.lower().strip()
     if l in COCO80_NAMES:
         return "native"
-    if my_singularize(l) in COCO80_SINGULAR:
+    if candidates(l) & COCO80_NAMES:
         return "plural_of_native"
     return "out_of_vocabulary"
 

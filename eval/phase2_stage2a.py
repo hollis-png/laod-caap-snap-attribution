@@ -34,71 +34,7 @@ SNAP_SIM_THRESHOLD = 0.7
 
 # COCO-80 category names, used as a crude proxy for "common/in-vocabulary"
 # phrasing vs whatever novel wording the LLM might generate instead.
-COCO80_NAMES = {
-	"person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat",
-	"traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
-	"dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack",
-	"umbrella", "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball",
-	"kite", "baseball bat", "baseball glove", "skateboard", "surfboard", "tennis racket",
-	"bottle", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "banana", "apple",
-	"sandwich", "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake", "chair",
-	"couch", "potted plant", "bed", "dining table", "toilet", "tv", "laptop", "mouse",
-	"remote", "keyboard", "cell phone", "microwave", "oven", "toaster", "sink",
-	"refrigerator", "book", "clock", "vase", "scissors", "teddy bear", "hair drier",
-	"toothbrush",
-}
-
-# Irregular plural/singular pairs among COCO-80 names and common LLM phrasing
-# for them; anything not listed here falls back to simple suffix stripping.
-_IRREGULAR_SINGULARS = {
-	"people": "person",
-	"mice": "mouse",
-	"knives": "knife",
-	"loaves": "loaf",
-	"shelves": "shelf",
-	"leaves": "leaf",
-}
-
-
-def normalize_plural(word):
-	"""
-	Crude, dependency-free singularization so that "chairs"/"cows"/"bottles"
-	aren't miscounted as novel/out-of-vocabulary wording relative to COCO-80's
-	singular "chair"/"cow"/"bottle" -- this is a pure grammatical-form
-	difference, not evidence of semantic drift, and conflating the two
-	confounds the RQ2 vocabulary-novelty analysis.
-	"""
-	w = word.lower().strip()
-	if w in _IRREGULAR_SINGULARS:
-		return _IRREGULAR_SINGULARS[w]
-	if w.endswith("ies") and len(w) > 3:
-		return w[:-3] + "y"
-	if w.endswith(("ses", "xes", "zes", "ches", "shes")) and len(w) > 3:
-		return w[:-2]
-	if w.endswith("s") and not w.endswith("ss") and len(w) > 1:
-		return w[:-1]
-	return w
-
-
-COCO80_NAMES_SINGULAR = {normalize_plural(n) for n in COCO80_NAMES}
-
-
-def vocabulary_category(label):
-	"""
-	Classifies a detection label relative to COCO-80 into three buckets:
-	  - "native": exact match to a COCO-80 name (singular or plural form)
-	  - "plural_of_native": normalizes to a COCO-80 name but isn't an exact
-	    string match (pure grammatical-form difference, e.g. "chairs")
-	  - "out_of_vocabulary": doesn't match COCO-80 at all, even after
-	    normalization (e.g. "plate", "cabinet") -- these are genuinely
-	    outside the COCO-80 label space, not just differently-worded synonyms
-	"""
-	raw = label.lower().strip()
-	if raw in COCO80_NAMES:
-		return "native"
-	if normalize_plural(raw) in COCO80_NAMES_SINGULAR:
-		return "plural_of_native"
-	return "out_of_vocabulary"
+from eval.vocab import COCO80_NAMES, COCO80_NAMES_SINGULAR, _IRREGULAR_SINGULARS, normalize_plural, vocabulary_category  # noqa: F401  (single shared definition, see eval/vocab.py)
 
 
 def load_predictions(predictions_path):

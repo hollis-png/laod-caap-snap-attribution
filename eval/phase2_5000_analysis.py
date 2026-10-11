@@ -17,45 +17,7 @@ CAAP_IOU_THRESHOLD = 0.5
 SNAP_SIM_THRESHOLD = 0.7
 NEAR_MISS_IOU_FLOOR = 0.1
 
-COCO80_NAMES = {
-	"person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat",
-	"traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
-	"dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack",
-	"umbrella", "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball",
-	"kite", "baseball bat", "baseball glove", "skateboard", "surfboard", "tennis racket",
-	"bottle", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "banana", "apple",
-	"sandwich", "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake", "chair",
-	"couch", "potted plant", "bed", "dining table", "toilet", "tv", "laptop", "mouse",
-	"remote", "keyboard", "cell phone", "microwave", "oven", "toaster", "sink",
-	"refrigerator", "book", "clock", "vase", "scissors", "teddy bear", "hair drier",
-	"toothbrush",
-}
-_IRREGULAR_SINGULARS = {
-	"people": "person", "mice": "mouse", "knives": "knife",
-	"loaves": "loaf", "shelves": "shelf", "leaves": "leaf",
-}
-
-def normalize_plural(word):
-	w = word.lower().strip()
-	if w in _IRREGULAR_SINGULARS:
-		return _IRREGULAR_SINGULARS[w]
-	if w.endswith("ies") and len(w) > 3:
-		return w[:-3] + "y"
-	if w.endswith(("ses", "xes", "zes", "ches", "shes")) and len(w) > 3:
-		return w[:-2]
-	if w.endswith("s") and not w.endswith("ss") and len(w) > 1:
-		return w[:-1]
-	return w
-
-COCO80_NAMES_SINGULAR = {normalize_plural(n) for n in COCO80_NAMES}
-
-def vocabulary_category(label):
-	raw = label.lower().strip()
-	if raw in COCO80_NAMES:
-		return "native"
-	if normalize_plural(raw) in COCO80_NAMES_SINGULAR:
-		return "plural_of_native"
-	return "out_of_vocabulary"
+from eval.vocab import COCO80_NAMES, COCO80_NAMES_SINGULAR, _IRREGULAR_SINGULARS, normalize_plural, vocabulary_category  # noqa: F401  (single shared definition, see eval/vocab.py)
 
 def load_predictions(path):
 	preds = {}

@@ -11,9 +11,9 @@
    "rate": 0.7171
   },
   "tiny (<2%) | out_of_vocabulary": {
-   "n": 5196,
-   "tp": 902,
-   "rate": 0.1736
+   "n": 5155,
+   "tp": 864,
+   "rate": 0.1676
   },
   "large (>25%) | native": {
    "n": 1629,
@@ -21,14 +21,14 @@
    "rate": 0.9472
   },
   "medium (8-25%) | out_of_vocabulary": {
-   "n": 2360,
-   "tp": 1084,
-   "rate": 0.4593
+   "n": 2331,
+   "tp": 1058,
+   "rate": 0.4539
   },
   "large (>25%) | out_of_vocabulary": {
-   "n": 2390,
-   "tp": 1142,
-   "rate": 0.4778
+   "n": 2379,
+   "tp": 1131,
+   "rate": 0.4754
   },
   "medium (8-25%) | native": {
    "n": 1902,
@@ -36,29 +36,29 @@
    "rate": 0.8991
   },
   "small (2-8%) | out_of_vocabulary": {
-   "n": 3344,
-   "tp": 1065,
-   "rate": 0.3185
+   "n": 3291,
+   "tp": 1020,
+   "rate": 0.3099
   },
   "large (>25%) | plural_of_native": {
-   "n": 148,
-   "tp": 125,
-   "rate": 0.8446
-  },
-  "tiny (<2%) | plural_of_native": {
-   "n": 1419,
-   "tp": 778,
-   "rate": 0.5483
+   "n": 159,
+   "tp": 136,
+   "rate": 0.8553
   },
   "medium (8-25%) | plural_of_native": {
-   "n": 310,
-   "tp": 267,
-   "rate": 0.8613
+   "n": 339,
+   "tp": 293,
+   "rate": 0.8643
+  },
+  "tiny (<2%) | plural_of_native": {
+   "n": 1460,
+   "tp": 816,
+   "rate": 0.5589
   },
   "small (2-8%) | plural_of_native": {
-   "n": 549,
-   "tp": 421,
-   "rate": 0.7668
+   "n": 602,
+   "tp": 466,
+   "rate": 0.7741
   }
  },
  "size": {
@@ -90,14 +90,14 @@
    "rate": 0.809
   },
   "out_of_vocabulary": {
-   "n": 13290,
-   "tp": 4193,
-   "rate": 0.3155
+   "n": 13156,
+   "tp": 4073,
+   "rate": 0.3096
   },
   "plural_of_native": {
-   "n": 2426,
-   "tp": 1591,
-   "rate": 0.6558
+   "n": 2560,
+   "tp": 1711,
+   "rate": 0.6684
   }
  },
  "aspect": {

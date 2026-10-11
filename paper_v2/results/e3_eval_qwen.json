@@ -14,20 +14,20 @@
    "rate_matched_only": 0.823
   },
   "plural_of_native": {
-   "n": 1951,
-   "tp": 1186,
-   "rate": 0.6079,
-   "n_with_gt_match": 1884,
-   "rate_matched_only": 0.6295
+   "n": 2088,
+   "tp": 1304,
+   "rate": 0.6245,
+   "n_with_gt_match": 2021,
+   "rate_matched_only": 0.6452
   },
   "out_of_vocabulary": {
-   "n": 19909,
-   "tp": 5708,
-   "rate": 0.2867,
-   "n_with_gt_match": 16740,
-   "rate_matched_only": 0.341
+   "n": 19772,
+   "tp": 5590,
+   "rate": 0.2827,
+   "n_with_gt_match": 16603,
+   "rate_matched_only": 0.3367
   }
  },
- "gap_all_denominator_pp": 52.2,
- "gap_matched_denominator_pp": 48.2
+ "gap_all_denominator_pp": 52.6,
+ "gap_matched_denominator_pp": 48.6
 }

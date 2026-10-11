@@ -16,7 +16,7 @@ cases = {c["id"]: c for c in json.load(open(f"{base}/human_review/cases.json"))}
 a1 = {r["id"]: r for r in csv.DictReader(open(f"{base}/human_review/human_labels_final.csv", encoding="utf-8"))}
 a2 = {r["id"]: r["human"] for r in csv.DictReader(open(f"{base}/human_review_e5/human_labels_annotator2.csv", encoding="utf-8-sig"))}
 assert set(a1) == set(a2) == set(cases), "id sets differ"
-STRATUM = {"no_overlap_n200": 3940, "other_class_n96": 6493}; N_FAIL = 12139; N_DET = 27273; N_HIT = 15134
+STRATUM = {"no_overlap_n200": 3940, "other_class_n96": 6468}; N_FAIL = 12139; N_DET = 27273; N_HIT = 15134
 CORE = {"sky", "wall", "field", "beach", "sea", "baseball field"}
 lab = {"a1_first": {i: a1[i]["first_pass"] for i in a1}, "a1_final": {i: a1[i]["final"] for i in a1}, "a2": dict(a2)}
 lab["both_valid"] = {i: "valid" if lab["a1_first"][i] == "valid" and a2[i] == "valid" else "not_valid" for i in a1}

@@ -6,9 +6,9 @@
    "rem_match_added_instance": 1408
   },
   "fail_overlap_other_class": {
-   "n": 6494,
-   "rem_match": 216,
-   "rem_match_added_instance": 167
+   "n": 6468,
+   "rem_match": 206,
+   "rem_match_added_instance": 160
   },
   "fail_no_overlap": {
    "n": 3940,
@@ -16,9 +16,9 @@
    "rem_match_added_instance": 140
   },
   "fail_loose_box_on_named_object": {
-   "n": 1705,
-   "rem_match": 409,
-   "rem_match_added_instance": 305
+   "n": 1731,
+   "rem_match": 419,
+   "rem_match_added_instance": 312
   }
  },
  "coco_fail_n": 12139,
@@ -33,14 +33,14 @@
    "coco_or_rem": 0.8476248161287532
   },
   "oov": {
-   "n": 13290,
-   "coco": 0.31550037622272387,
-   "coco_or_rem": 0.327163280662152
+   "n": 13156,
+   "coco": 0.30959258133171175,
+   "coco_or_rem": 0.3208422012769839
   },
   "plural": {
-   "n": 2426,
-   "coco": 0.6558120362737015,
-   "coco_or_rem": 0.7238252267106348
+   "n": 2560,
+   "coco": 0.668359375,
+   "coco_or_rem": 0.735546875
   }
  }
 }

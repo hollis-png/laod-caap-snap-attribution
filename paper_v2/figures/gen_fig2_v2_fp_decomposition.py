@@ -11,8 +11,8 @@ from plot_common import plt, SKY_BLUE, ORANGE, VERMILLION, GREEN, GRAY, FIG_SING
 
 groups = [  # (label, size, [(share, color, name)])
     ("No overlap\n(3,940)", 3940, [(151/200, GREEN, "valid, unannotated"), (17/200, GRAY, "ambiguous"), (32/200, VERMILLION, "wrong")]),
-    ("Overlaps only a\ndifferent-class box\n(6,494)", 6494, [(88/96, GREEN, "valid, unannotated"), (2/96, GRAY, "ambiguous"), (6/96, VERMILLION, "wrong")]),
-    ("Loose box on the\nnamed object\n(1,705)", 1705, [(1.0, SKY_BLUE, "genuine loose box")]),
+    ("Overlaps only a\ndifferent-class box\n(6,468)", 6468, [(88/96, GREEN, "valid, unannotated"), (2/96, GRAY, "ambiguous"), (6/96, VERMILLION, "wrong")]),
+    ("Loose box on the\nnamed object\n(1,731)", 1731, [(1.0, SKY_BLUE, "genuine loose box")]),
 ]
 fig, ax = plt.subplots(figsize=FIG_SINGLE)
 seen = set()

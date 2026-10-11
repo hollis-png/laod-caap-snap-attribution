@@ -43,23 +43,23 @@
    "hi": 1.0
   },
   "deepseek_v1~deepseek_v2": {
-   "n": 775,
-   "kappa": 0.7833783657877574
+   "n": 771,
+   "kappa": 0.7800041215541429
   },
   "deepseek_v1~mistral_v1": {
-   "n": 775,
-   "kappa": 0.6595300484414001
+   "n": 771,
+   "kappa": 0.6539524796835156
   },
   "deepseek_v2~mistral_v1": {
-   "n": 775,
-   "kappa": 0.743523685048342
+   "n": 771,
+   "kappa": 0.7386911605717914
   }
  },
  "table": {
   "deepseek_v1|synonym": {
-   "labels": 139,
-   "n": 2788,
-   "rate": 0.849713055954089
+   "labels": 135,
+   "n": 2655,
+   "rate": 0.8470809792843691
   },
   "deepseek_v1|finer_grained": {
    "labels": 85,
@@ -72,9 +72,9 @@
    "rate": 0.12531527943714324
   },
   "deepseek_v2|synonym": {
-   "labels": 96,
-   "n": 1776,
-   "rate": 0.7989864864864865
+   "labels": 92,
+   "n": 1643,
+   "rate": 0.790626902008521
   },
   "deepseek_v2|finer_grained": {
    "labels": 93,
@@ -92,9 +92,9 @@
    "rate": 0.0
   },
   "mistral_v1|synonym": {
-   "labels": 48,
-   "n": 1018,
-   "rate": 0.8860510805500982
+   "labels": 44,
+   "n": 885,
+   "rate": 0.8836158192090395
   },
   "mistral_v1|finer_grained": {
    "labels": 137,

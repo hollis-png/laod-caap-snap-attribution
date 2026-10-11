@@ -8,7 +8,7 @@ Annotator CSV columns: id, choice (1-5), choice_name, word, note.  Mapping: 1 ->
 import csv, json, sys, os, tempfile, random, collections
 import numpy as np
 
-POOLS = {"test_no_overlap": 3940, "test_other_class": 6493}; N_FAIL = 12139
+POOLS = {"test_no_overlap": 3940, "test_other_class": 6468}; N_FAIL = 12139
 MAP = {1: "valid", 2: "wrong", 3: "ambiguous", 4: "wrong", 5: "ambiguous"}
 
 def wilson(k, n, z=1.96):
@@ -92,7 +92,7 @@ def selftest():
                 said = (1 if rng.random() < 0.93 else 4) if t else (4 if rng.random() < 0.92 else 1)
                 fh.write(f"{i},{said},,\"w\",\"\"\n")
     main(f"{tmp}/key.json", f"{tmp}/old.csv", f"{tmp}/out.json", [f"{tmp}/a1.csv", f"{tmp}/a2.csv"])
-    true_share = (3940 * np.mean([truth[i] for i, v in key.items() if v["kind"] == "test_no_overlap"]) + 6493 * np.mean([truth[i] for i, v in key.items() if v["kind"] == "test_other_class"])) / N_FAIL
+    true_share = (3940 * np.mean([truth[i] for i, v in key.items() if v["kind"] == "test_no_overlap"]) + 6468 * np.mean([truth[i] for i, v in key.items() if v["kind"] == "test_other_class"])) / N_FAIL
     print("true simulated share of all failures:", round(float(true_share), 3))
 
 if __name__ == "__main__":

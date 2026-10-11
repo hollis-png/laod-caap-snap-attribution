@@ -27,38 +27,38 @@
    "share_of_all_dups": 0.39819004524886875
   },
   "out_of_vocabulary": {
-   "n": 13290,
-   "hit_detection_level": 4193,
-   "tp_one_to_one": 3709,
-   "dup": 484,
-   "detection_hit_rate": 0.31550037622272387,
-   "one_to_one_rate": 0.2790820165537998,
-   "dup_share_of_hits": 0.1154304793703792,
+   "n": 13156,
+   "hit_detection_level": 4073,
+   "tp_one_to_one": 3599,
+   "dup": 474,
+   "detection_hit_rate": 0.30959258133171175,
+   "one_to_one_rate": 0.2735633931286105,
+   "dup_share_of_hits": 0.11637613552663884,
    "dup_share_of_hits_ci": [
-    0.1061084381288198,
-    0.12545655588953913
+    0.10688725514194825,
+    0.12658799197091478
    ],
-   "share_of_all_detections": 0.4872951270487295,
-   "share_of_all_dups": 0.5475113122171946
+   "share_of_all_detections": 0.4823818428482382,
+   "share_of_all_dups": 0.5361990950226244
   },
   "plural_of_native": {
-   "n": 2426,
-   "hit_detection_level": 1591,
-   "tp_one_to_one": 1543,
-   "dup": 48,
-   "detection_hit_rate": 0.6558120362737015,
-   "one_to_one_rate": 0.6360263808738664,
-   "dup_share_of_hits": 0.03016970458830924,
+   "n": 2560,
+   "hit_detection_level": 1711,
+   "tp_one_to_one": 1653,
+   "dup": 58,
+   "detection_hit_rate": 0.668359375,
+   "one_to_one_rate": 0.645703125,
+   "dup_share_of_hits": 0.03389830508474576,
    "dup_share_of_hits_ci": [
-    0.02283028601242135,
-    0.03977254551642766
+    0.026313721704185437,
+    0.043571216939710306
    ],
-   "share_of_all_detections": 0.08895244380889525,
-   "share_of_all_dups": 0.05429864253393665
+   "share_of_all_detections": 0.09386572800938657,
+   "share_of_all_dups": 0.06561085972850679
   }
  },
- "gap_pp_detection_level": 49.353310997611665,
- "gap_pp_one_to_one": 49.949373839990784,
+ "gap_pp_detection_level": 49.94409048671288,
+ "gap_pp_one_to_one": 50.50123618250972,
  "top_duplicate_labels": [
   [
    "man",

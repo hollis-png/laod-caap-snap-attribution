@@ -2,11 +2,11 @@
 (detection-level CAAP-TP rate by vocabulary category; denominator = all detections, and also restricted to detections that overlap some GT)."""
 import json, sys, os
 import numpy as np
-sys.path.insert(0, os.path.expanduser("~/laod-exp"))
+sys.path.insert(0, os.environ.get("LAOD_REPO", os.path.expanduser("~/laod-exp")))  # directory that contains eval/
 from eval.caap import compute_ca_ap
-from eval.phase2_stage2a import vocabulary_category
+from eval.vocab import vocabulary_category  # torch-free; the old suffix rules misfiled horses, buses, vases, suitcases
 pred_path, out_path = sys.argv[1], sys.argv[2]
-coco = json.load(open(os.path.expanduser("~/laod-caap-check/instances_val2017.json"))); cat = {c["id"]: c["name"] for c in coco["categories"]}
+coco = json.load(open(os.environ.get("COCO_INSTANCES", os.path.expanduser("~/laod-caap-check/instances_val2017.json")))); cat = {c["id"]: c["name"] for c in coco["categories"]}
 preds = {}
 for l in open(pred_path):
     if l.strip(): r = json.loads(l); preds[r["image_id"]] = r["detections"]

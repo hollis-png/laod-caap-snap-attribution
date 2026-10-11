@@ -101,7 +101,10 @@ def compute_ap_single_image_semantic(predictions_per_image, ground_truths_per_im
 	if num_pred == 0 and num_gt > 0:
 		return [], [], num_gt
 
-	predictions_per_image = sorted(predictions_per_image, key=lambda x: x[1], reverse=True)
+	order = sorted(range(num_pred), key=lambda k: predictions_per_image[k][1], reverse=True)
+	predictions_per_image = [predictions_per_image[k] for k in order]
+	# embeddings were computed in the caller's order; keep them aligned with the confidence-sorted predictions
+	pred_embeddings = np.asarray(pred_embeddings)[order]
 
 	sim_matrix = cosine_similarity_matrix(pred_embeddings, gt_embeddings)
 
