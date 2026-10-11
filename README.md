@@ -8,7 +8,7 @@ This repository does **not** re-implement or re-host [LAOD](https://github.com/f
 
 ## Correction notice (2026-10)
 
-`eval/caap.py` as first released (and as used for arXiv v1) contained a bug: the corpus-level `compute_ca_ap` re-matched the pooled detections against the ground-truth boxes of **all** images, so a detection could match a box in a different image, increasingly so for larger corpora. This inflated corpus-level CAAP (0.38 on the 5,000-image split; the corrected value is **0.21**, per-IoU-interval LO/MI/HI = 0.268 / 0.231 / 0.113). Single-image calls and all detection-level analyses (`phase2_*`, vocabulary and audit scripts) were not affected. The current `eval/caap.py` matches per image and is covered by `tests/test_caap.py` (run `pytest tests`). Anything that cites a corpus CAAP from arXiv v1 or from an older log should be recomputed. The `selfreview_analysis/` directory holds the scripts of the follow-up analysis that found and quantified this and the other corrections. The corrected numbers and the revised analysis are in the revised version of the paper (to be posted as arXiv v2; until then the posted version is v1 and still contains the uncorrected numbers).
+`eval/caap.py` as first released (and as used for arXiv v1) contained a bug: the corpus-level `compute_ca_ap` re-matched the pooled detections against the ground-truth boxes of **all** images, so a detection could match a box in a different image, increasingly so for larger corpora. This inflated corpus-level CAAP (0.38 on the 5,000-image split; the corrected value is **0.21**, per-IoU-interval LO/MI/HI = 0.268 / 0.231 / 0.113). Single-image calls and all detection-level analyses (`phase2_*`, vocabulary and audit scripts) were not affected. The current `eval/caap.py` matches per image and is covered by `tests/test_caap.py` (run `pytest tests`). Anything that cites a corpus CAAP from arXiv v1 or from an older log should be recomputed. The `selfreview_analysis/` directory holds the scripts of the follow-up analysis that found and quantified this and the other corrections. The corrected numbers and the revised analysis are in the revised version of the paper (arXiv v2, a replacement of [arXiv:2609.32567](https://arxiv.org/abs/2609.32567) submitted on 2026-10-12; until arXiv lists it, the visible version is v1, which still contains the uncorrected numbers; the link always shows the latest version).
 
 A second, smaller fix: `eval/snap.py` computed label embeddings in the caller's order but matched predictions in confidence order, so embeddings and predictions were misaligned whenever the input was not already sorted by confidence. The prediction files used in the paper were already confidence-sorted, so the reported SNAP numbers are unchanged; the fix is covered by `tests/test_snap_order_and_ap.py`.
 
@@ -140,7 +140,7 @@ If you use this code, please cite the paper and the original [LAOD](https://arxi
 
 ## Paper v2 artifacts (`paper_v2/`)
 
-Data, labels and results behind the revised paper (arXiv v2, posted after this commit; the arXiv number is added when it is posted). Everything here is text, CSV or JSON; no COCO images are redistributed.
+Data, labels and results behind the revised paper (arXiv v2 of 2609.32567). Everything here is text, CSV or JSON; no COCO images are redistributed.
 
 | Folder | Content |
 |---|---|
