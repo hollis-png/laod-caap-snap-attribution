@@ -8,7 +8,7 @@ This repository does **not** re-implement or re-host [LAOD](https://github.com/f
 
 ## Correction notice (2026-10)
 
-`eval/caap.py` as first released (and as used for arXiv v1) contained a bug: the corpus-level `compute_ca_ap` re-matched the pooled detections against the ground-truth boxes of **all** images, so a detection could match a box in a different image, increasingly so for larger corpora. This inflated corpus-level CAAP (0.38 on the 5,000-image split; the corrected value is **0.21**, per-IoU-interval LO/MI/HI = 0.268 / 0.231 / 0.113). Single-image calls and all detection-level analyses (`phase2_*`, vocabulary and audit scripts) were not affected. The current `eval/caap.py` matches per image and is covered by `tests/test_caap.py` (run `pytest tests`). Anything that cites a corpus CAAP from arXiv v1 or from an older log should be recomputed. The `selfreview_analysis/` directory holds the scripts of the follow-up analysis that found and quantified this and the other corrections. The corrected numbers and the revised analysis are in the updated version of the paper (arXiv v2).
+`eval/caap.py` as first released (and as used for arXiv v1) contained a bug: the corpus-level `compute_ca_ap` re-matched the pooled detections against the ground-truth boxes of **all** images, so a detection could match a box in a different image, increasingly so for larger corpora. This inflated corpus-level CAAP (0.38 on the 5,000-image split; the corrected value is **0.21**, per-IoU-interval LO/MI/HI = 0.268 / 0.231 / 0.113). Single-image calls and all detection-level analyses (`phase2_*`, vocabulary and audit scripts) were not affected. The current `eval/caap.py` matches per image and is covered by `tests/test_caap.py` (run `pytest tests`). Anything that cites a corpus CAAP from arXiv v1 or from an older log should be recomputed. The `selfreview_analysis/` directory holds the scripts of the follow-up analysis that found and quantified this and the other corrections. The corrected numbers and the revised analysis are in the revised version of the paper (to be posted as arXiv v2; until then the posted version is v1 and still contains the uncorrected numbers).
 
 A second, smaller fix: `eval/snap.py` computed label embeddings in the caller's order but matched predictions in confidence order, so embeddings and predictions were misaligned whenever the input was not already sorted by confidence. The prediction files used in the paper were already confidence-sorted, so the reported SNAP numbers are unchanged; the fix is covered by `tests/test_snap_order_and_ap.py`.
 
@@ -67,7 +67,7 @@ A second, smaller fix: `eval/snap.py` computed label embeddings in the caller's 
 
 | File | Purpose |
 |---|---|
-| `snap_checkpoint_compare.py` | Re-runs SNAP with three different CLIP checkpoints to rule out checkpoint choice as the cause of the SNAP reproduction gap |
+| `snap_checkpoint_compare.py` | Re-runs SNAP with three different CLIP checkpoints. The paper keeps this only as an ablation: the SNAP reproduction question is settled by the threshold sets of LAOD's code (§2.2), and the encoder question by `selfreview_analysis/e20_snap_sbert.py` |
 
 ### Paper §3.6 — Robustness checks (detector backbone / LLM swap)
 
@@ -109,6 +109,7 @@ Scripts written after a self-review of the paper (all read stored predictions or
 | `e16_eq7_caap.py` | CAAP under the alternative reading (Eq. 7) of LAOD's interval definition |
 | `e17_cluster_bootstrap.py` | Image-clustered bootstrap intervals for the headline rates |
 | `e19_laod_legacy_grid.py` | Our per-IoU CAAP summarised over the threshold sets that LAOD's code produced for its paper (HI includes the unreachable IoU 1.00) |
+| `e20_snap_sbert.py` | SNAP with CLIP and with Sentence-BERT (all-MiniLM-L6-v2, re-implemented with `transformers`), each with the true and with label-shuffled predictions; paper §3.5. Needs the prediction file and `instances_val2017.json`; not included, see below |
 | `e18_repeat.sh`, `e18_repeat_summary.py` | Repeat runs of the Gemma label generation (sampling variance of CAAP and SNAP) |
 | `compute_agreement_hh.py` | Cohen's kappa between two human annotators |
 | `judge/` | LLM-judge runs for the vocabulary contrast, including the text-only variant (`run_textonly.py`); needs an OpenRouter key in the environment of the `llm` CLI, never in the repo |
