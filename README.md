@@ -148,7 +148,7 @@ If you use this code, please cite the paper and the original [LAOD](https://arxi
 |---|---|
 | COCO val2017 annotations | CC BY 4.0. The images carry their original Flickr licences and are not redistributed here. |
 | `google/gemma-3-4b-it` | Gated on Hugging Face; use is governed by the Gemma Terms of Use. |
-| YOLO-World X (`yolov8x-worldv2.pt`, run through `ultralytics`) | YOLO-World is released under GPL-3.0, and `ultralytics` is under its own copyleft licence (AGPL-3.0 at the time of writing; verify). This repo only calls them and does not copy their code; if you redistribute a combined work, check the terms. |
+| YOLO-World X (`yolov8x-worldv2.pt`, run through `ultralytics`) | YOLO-World is released under GPL-3.0; its README says it is supported for commercial use and gives a contact for a commercial licence, and it states no separate licence for the weights. `ultralytics` is released under AGPL-3.0, with a separate Ultralytics Enterprise License for use outside AGPL-3.0 (both from the projects' READMEs, checked 2026-10-11). This repo only calls them and does not copy their code; if you redistribute a combined work, check the terms. |
 | `Qwen/Qwen2.5-VL-7B-Instruct`, `IDEA-Research/grounding-dino-tiny` | See their model cards. |
 | CLIP `openai/clip-vit-base-patch32` | OpenAI's CLIP code is MIT-licensed. The Hugging Face weights have no licence field; the model card limits use to research and calls deployed use cases out of scope. We use CLIP only as a text encoder for the SNAP score. |
 | LVIS v1, COCO-ReM | Used only for the re-scoring scripts `e1`/`e2`/`e7`; see their own terms. |
